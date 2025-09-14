@@ -1,0 +1,97 @@
+// Docs : https://github.com/Alexays/Waybar/wiki/Configuration
+
+{
+    "layer": "top",
+    "height": 30,
+    "modules-left" : [
+        "custom/rofi"
+    ],
+    "modules-center" : [
+        "clock"
+    ],
+    "modules-right": [
+        "battery",
+        "network",
+        "wireplumber"
+    ],
+
+
+
+
+
+
+
+
+    // Oh god here comes the Modules
+
+    "battery": {
+        "interval" : 20,
+
+        // not sure what to do with this, look into it later
+        "states" : {
+            "reminder" : 50,
+            "warning" : 30,
+            "critical" : 15
+        },
+
+        // TODO : charging and discharging. Colors?
+
+        "format" : "{capacity}% {icon}",
+        "format-time" : "{H}h {M}min",
+        "format-icons" : ["", "", "", "", ""], // placeholder for now
+        
+        "tooltip-format" : "{time} left. Hmm, seems okay, for now.",
+        "tooltip-format-reminder" : "{time} left. Halfway, remember to charge after this session~",
+        "tooltip-format-warning" : "{time} left. Yeah uhh... Charge, please?",
+        "tooltip-format-critical" : "{time} left. You're pissing me off rn charge please..."
+
+    },
+
+    "clock" : {
+        "format" : "{:%H:%M, %e %B %Y %A}",
+        "tooltip-format": "Sancho, I have conceived an idea such ingenious!",
+        "timezone" : "Asia/Kuala_Lumpur"
+    },
+
+    "network" : {
+        "interface": "wlp3s0",
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-wifi": "\"Yay, wifi!!\"",
+
+        "format-disconnected": "No network, huh?",
+        "tooltip-format-disconnected": "At least it's better than slow wifi..."
+    },
+
+    "wireplumber" : {
+        "format" : "{volume}% {icon}",
+        "format-muted" : "mooted",
+        "format-icons": ["", "", ""]
+    },
+
+    "custom/rofi": {
+        "exec-on-event": true,
+        "on-click": "rofi -show run",
+        "format": "open app, temp"
+    },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  }
+}
