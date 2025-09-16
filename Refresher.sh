@@ -1,0 +1,1 @@
+exec ./Tools/waybar-reload
