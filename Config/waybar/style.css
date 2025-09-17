@@ -1,6 +1,6 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: JetBrainsMono Nerd Font Mono, FontAwesome;
+    font-family: FontAwesome;
     font-size: 13px;
 }
 
@@ -10,13 +10,56 @@ window#waybar {
     background-color: rgba(148, 0, 211, 0); /* disabled for now */
 }
 
-/* Left Modules */
-
-#custom-rofi, #clock, #battery, #network, #wireplumber {
+#clock, #battery, #network{
     background-color: rgba(0, 0, 0, 0.75);
-    padding: 5px 20px 5px 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    padding: 0px 15px 0px 15px;
+    margin-left: 5px;
+    margin-right: 5px;
     border-bottom: 4px solid rgb(95, 50, 163);
-    color: white;
+    color: rgb(255, 255, 255);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+#custom-rofi {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding: 0px 15px 0px 15px;
+    border-bottom: 4px solid rgb(95, 50, 163);
+    color: rgb(255, 255, 255);
+    border-bottom-right-radius: 5px;
+}
+
+#wireplumber  {
+    background-color: rgba(0, 0, 0, 0.75); 
+    padding: 0px 10px 0px 10px;
+    border-bottom: 4px solid rgb(95, 50, 163);
+    color: rgb(255, 255, 255);
+    border-bottom-left-radius: 5px;
+}
+
+#workspaces {
+    background-color: rgba(0, 0, 0, 0.75);
+    border-bottom: 4px solid rgb(95, 50, 163);
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#workspaces button{
+    color: rgb(128, 128, 128);
+}
+
+#workspaces button.active {
+    color: rgb(255, 255, 255);
+    background-color: rgb(58, 31, 100);
+    border-radius: 0px;
+}
+
+#workspaces button:hover {
+  box-shadow: none;
+  background: rgb(95, 50, 163);
+  border-color: rgb(112, 87, 226);
+  color: white;
+  transition-duration: 0.3s;
+  border-radius: 0px;
 }

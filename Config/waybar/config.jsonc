@@ -57,7 +57,7 @@
 
     "network" : {
         "interface": "wlp3s0",
-        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-wifi": "{essid}  ({signalStrength}%)",
         "tooltip-format-wifi": "\"Yay, wifi!!\"",
 
         "format-disconnected": "No network, huh?",
@@ -73,7 +73,7 @@
     "custom/rofi": {
         "exec-on-event": true,
         "on-click": "rofi -show run",
-        "format": "open app, temp"
+        "format": ""
     }
 
 }
