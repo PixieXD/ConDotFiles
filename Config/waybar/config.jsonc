@@ -3,23 +3,23 @@
 {
     "position": "top",
     "modules-left" : [
+        "custom/wlogout",
         "custom/rofi",
         "hyprland/workspaces"
     ],
     "modules-center" : [
-        "clock"
+        "custom/flameshot",
+        "clock",
+        "custom/copyq"
     ],
     "modules-right": [
         "battery",
         "network",
-        "wireplumber"
+        "wireplumber",
+        "custom/swaync"
     ],
 
     "reload_style_on_change": true,
-
-
-
-
 
 
 
@@ -51,8 +51,26 @@
 
     "clock" : {
         "format" : "{:%H:%M, %e %B %Y %A}",
-        "tooltip-format": "Sancho, I have conceived an idea such ingenious!",
-        "timezone" : "Asia/Kuala_Lumpur"
+        "format-alt" : "{:%H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "timezone" : "Asia/Kuala_Lumpur",
+        "calendar" : {
+            "mode" : "month",
+            "mode-mon-col" : 4,
+            "on-scroll" : 1,
+            "weeks-pos" : "right",
+                "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                                  "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                                  "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                                  "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                                  "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                                  }
+        },
+
+        "actions" : {
+            "on-click-right" : "mode"
+        }
     },
 
     "network" : {
@@ -65,15 +83,39 @@
     },
 
     "wireplumber" : {
-        "format" : "{volume}% {icon}",
+        "format" : "{volume}%   {icon}",
         "format-muted" : "mooted",
         "format-icons": ["", "", ""]
     },
 
     "custom/rofi": {
-        "exec-on-event": true,
         "on-click": "rofi -show run",
         "format": ""
-    }
+    },
 
+    "custom/flameshot": {
+        "on-click": "flameshot gui --path ~/Images/Screenshots",
+        "format": ""
+    },
+
+    "custom/copyq": {
+        "on-click": "copyq toggle",
+        "format": ""
+    },
+
+    "custom/swaync": {
+      "tooltip": false,
+      "format": "",
+      "return-type": "json",
+      "exec-if": "which swaync-client",
+      "exec": "swaync-client -swb",
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "escape": true
+    },
+
+    "custom/wlogout": {
+        "on-click": "wlogout",
+        "format": ""
+    }
 }
