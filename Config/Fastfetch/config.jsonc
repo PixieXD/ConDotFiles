@@ -1,0 +1,34 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "source": "~/Images/FastfetchLogos/Mizu.png",
+        "height": 13,
+        "width": 34,
+        "padding": {
+            "top": 1,
+            "left": 1
+        },
+        "type": "kitty-direct"
+    },
+    "display": {
+        "separator": " ~ "
+    },
+    "modules": [
+        "break",
+        { "type": "command", "key": " ", "text": "~/.config/fastfetch/quotes.sh", "format": "---- {result} ----"},
+        "break",
+        { "type": "os", "key": " ", "format": "I use {##DA70D6}{pretty-name} ({arch}){#} by the way!"},
+        { "type": "cpu", "key": "CPU", "format": "{name}"},
+        { "type": "gpu", "key": "GPU"},
+        { "type": "disk", "key": "Disk","format": "{size-used} / {size-total} ({size-percentage})"},
+        { "type": "memory", "key": "Memory","format": "{used} / {total} ({percentage})"},
+        { "type": "battery", "key": "Battery", "format": "{capacity} ({status})", "percent": { "green": 100, "yellow": 20}},
+        { "type": "wm", "key": "Window Manager", "format": "{pretty-name} on {protocol-name}™ ({version})"},
+        "break",
+        { "type": "datetime", "key" : " ","format": "~ {day-pretty}/{month-pretty}/{year}, {hour-pretty}:{minute-pretty}:{second-pretty}"}, 
+        { "type": "uptime", "key": " ","format": "~ You've been up for {formatted} now..."}
+
+    ]
+}
+
+
