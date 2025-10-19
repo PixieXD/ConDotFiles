@@ -15,7 +15,7 @@
     },
     "modules": [
         "break",
-        { "type": "command", "key": " ", "text": "~/.config/fastfetch/quotes.sh", "format": "---- {result} ----"},
+        { "type": "command", "key": " ", "text": "~/.config/fastfetch/quotes.sh", "format": "{result}"},
         "break",
         { "type": "os", "key": " ", "format": "I use {##DA70D6}{pretty-name} ({arch}){#} by the way!"},
         { "type": "cpu", "key": "CPU", "format": "{name}"},
