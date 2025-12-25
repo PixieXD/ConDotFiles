@@ -14,7 +14,9 @@ quotes=(
     "\033[38;2;255;112;1162mIt's as if I am made to end the curse of being born.\033[m"
 
     # my own thoughts and quotes, pretty huh?
+    
     "You know, back in my days..."
+    "Anima Immortalis Est."
     ":kannasip:"
     "How's your day lately?"
     "\"Milo ais satu ye bang~\""

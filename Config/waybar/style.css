@@ -2,7 +2,12 @@
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome;
     font-size: 13px;
+    color: white;
 }
+
+/* Variables */
+@define-color bgcolor rgba(0, 0, 0, 0.75);
+@define-color customviolet rgb (95, 50, 163);
 
 /* W speed */
 
@@ -11,75 +16,67 @@ window#waybar {
 }
 
 #clock{
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: @bgcolor;
     padding: 0px 15px 0px 15px;
-    border-bottom: 4px solid rgb(95, 50, 163);
-    color: rgb(255, 255, 255);
+    border-bottom: 4px solid @customviolet;
 }
 
 #custom-copyq {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: @bgcolor;
     padding: 0px 15px 0px 15px;
-    border-bottom: 4px solid rgb(95, 50, 163);
-    color: rgb(255, 255, 255);
+    border-bottom: 4px solid @customviolet;
+    
     border-bottom-right-radius: 5px;
  }
 
 #custom-flameshot {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: @bgcolor;
     padding: 0px 15px 0px 15px;
-    border-bottom: 4px solid rgb(95, 50, 163);
-    color: rgb(255, 255, 255);
+    border-bottom: 4px solid @customviolet;
     border-bottom-left-radius: 5px;
 } 
 
 #battery{
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: @bgcolor;
     padding: 0px 15px 0px 15px;
     margin-left: 5px;
-    border-bottom: 4px solid rgb(95, 50, 163);
-    color: rgb(255, 255, 255);
+    border-bottom: 4px solid @customviolet;
     border-bottom-left-radius: 5px;
 }
 
 #network{
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: @bgcolor;
     padding: 0px 15px 0px 15px;
-    border-bottom: 4px solid rgb(95, 50, 163);
-    color: rgb(255, 255, 255);
+    border-bottom: 4px solid @customviolet;
 }
 
 #custom-wlogout {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: @bgcolor;
     padding: 0px 15px 0px 15px;
-    border-bottom: 4px solid rgb(95, 50, 163);
-    color: rgb(255, 255, 255);
+    border-bottom: 4px solid @customviolet;
 }
 
 #custom-rofi {
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: @bgcolor;
     padding: 0px 15px 0px 15px;
-    border-bottom: 4px solid rgb(95, 50, 163);
-    color: rgb(255, 255, 255);
+    border-bottom: 4px solid @customviolet;
 }
 
 #wireplumber  {
-    background-color: rgba(0, 0, 0, 0.75); 
+    background-color: @bgcolor; 
     padding: 0px 10px 0px 10px;
-    border-bottom: 4px solid rgb(95, 50, 163);
-    color: rgb(255, 255, 255);
+    border-bottom: 4px solid @customviolet;
 }
 
 #custom-swaync {
-    background-color: rgba(0, 0, 0, 0.75); 
+    background-color: @bgcolor; 
     padding: 0px 10px 0px 10px;
-    border-bottom: 4px solid rgb(95, 50, 163);
-    color: rgb(255, 255, 255);
+    border-bottom: 4px solid @customviolet;
 }
 
 #workspaces {
-    background-color: rgba(0, 0, 0, 0.75);
-    border-bottom: 4px solid rgb(95, 50, 163);
+    background-color: @bgcolor;
+    border-bottom: 4px solid @customviolet;
     border-bottom-right-radius: 5px;
 }
 
@@ -88,16 +85,15 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: rgb(255, 255, 255);
+    
     background-color: rgb(58, 31, 100);
     border-radius: 0px;
 }
 
 #workspaces button:hover {
   box-shadow: none;
-  background: rgb(95, 50, 163);
+  background: @customviolet;
   border-color: rgb(112, 87, 226);
-  color: white;
   transition-duration: 0.3s;
   border-radius: 0px;
 }

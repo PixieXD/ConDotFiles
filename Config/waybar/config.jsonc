@@ -1,121 +1,127 @@
 // Docs : https://github.com/Alexays/Waybar/wiki/Configuration
+[
+    {
+        "position": "top",
+        "modules-left" : [
+            "custom/wlogout",
+            "custom/rofi",
+            "hyprland/workspaces"
+        ],
+        "modules-center" : [
+            "custom/flameshot",
+            "clock",
+            "custom/copyq"
+        ],
+        "modules-right": [
+            "battery",
+            "network",
+            "wireplumber",
+            "custom/swaync"
+        ],
 
-{
-    "position": "top",
-    "modules-left" : [
-        "custom/wlogout",
-        "custom/rofi",
-        "hyprland/workspaces"
-    ],
-    "modules-center" : [
-        "custom/flameshot",
-        "clock",
-        "custom/copyq"
-    ],
-    "modules-right": [
-        "battery",
-        "network",
-        "wireplumber",
-        "custom/swaync"
-    ],
-
-    "reload_style_on_change": true,
-
-
+        "reload_style_on_change": true,
 
 
-    // Oh god here comes the Modules
 
-    "battery": {
-        "interval" : 20,
 
-        // not sure what to do with this, look into it later
-        "states" : {
-            "reminder" : 50,
-            "warning" : 30,
-            "critical" : 15
+        // Oh god here comes the Modules
+
+        "battery": {
+            "interval" : 20,
+
+            // not sure what to do with this, look into it later
+            "states" : {
+                "reminder" : 50,
+                "warning" : 30,
+                "critical" : 15
+            },
+
+            // TODO : charging and discharging. Colors?
+
+            "format" : "{capacity}% {icon}",
+            "format-time" : "{H}h {M}min",
+            "format-icons" : ["", "", "", "", ""], // placeholder for now
+
+            "tooltip-format" : "{time} left. Hmm, seems okay, for now.",
+            "tooltip-format-reminder" : "{time} left. Halfway, remember to charge after this session~",
+            "tooltip-format-warning" : "{time} left. Yeah uhh... Charge, please?",
+            "tooltip-format-critical" : "{time} left. You're pissing me off rn charge please..."
+
         },
 
-        // TODO : charging and discharging. Colors?
+        "clock" : {
+            "format" : "{:%H:%M, %e %B %Y %A}",
+            "format-alt" : "{:%H:%M}",
+            "tooltip-format": "<tt><small>{calendar}</small></tt>",
+            "timezone" : "Asia/Kuala_Lumpur",
+            "calendar" : {
+                "mode" : "month",
+                "mode-mon-col" : 4,
+                "on-scroll" : 1,
+                "weeks-pos" : "right",
+                    "format": {
+                    "months":     "<span color='#ffead3'><b>{}</b></span>",
+                                      "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                                      "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                                      "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                                      "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                                      }
+            },
 
-        "format" : "{capacity}% {icon}",
-        "format-time" : "{H}h {M}min",
-        "format-icons" : ["", "", "", "", ""], // placeholder for now
-        
-        "tooltip-format" : "{time} left. Hmm, seems okay, for now.",
-        "tooltip-format-reminder" : "{time} left. Halfway, remember to charge after this session~",
-        "tooltip-format-warning" : "{time} left. Yeah uhh... Charge, please?",
-        "tooltip-format-critical" : "{time} left. You're pissing me off rn charge please..."
-
-    },
-
-    "clock" : {
-        "format" : "{:%H:%M, %e %B %Y %A}",
-        "format-alt" : "{:%H:%M}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "timezone" : "Asia/Kuala_Lumpur",
-        "calendar" : {
-            "mode" : "month",
-            "mode-mon-col" : 4,
-            "on-scroll" : 1,
-            "weeks-pos" : "right",
-                "format": {
-                "months":     "<span color='#ffead3'><b>{}</b></span>",
-                                  "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-                                  "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-                                  "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-                                  "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
-                                  }
+            "actions" : {
+                "on-click-right" : "mode"
+            }
         },
 
-        "actions" : {
-            "on-click-right" : "mode"
+        "network" : {
+            "interface": "wlp3s0",
+            "format-wifi": "{essid}  ({signalStrength}%)",
+            "tooltip-format-wifi": "\"Yay, wifi!!\"",
+
+            "format-disconnected": "No network, huh?",
+            "tooltip-format-disconnected": "At least it's better than slow wifi..."
+        },
+
+        "wireplumber" : {
+            "format" : "{volume}%   {icon}",
+            "format-muted" : "mooted",
+            "format-icons": ["", "", ""]
+        },
+
+        "custom/rofi": {
+            "on-click": "rofi -show drun",
+            "format": ""
+        },
+
+        "custom/flameshot": {
+            "on-click": "flameshot gui --path ~/Images/Screenshots",
+            "format": ""
+        },
+
+        "custom/copyq": {
+            "on-click": "copyq toggle",
+            "format": ""
+        },
+
+        "custom/swaync": {
+          "tooltip": false,
+          "format": "",
+          "return-type": "json",
+          "exec-if": "which swaync-client",
+          "exec": "swaync-client -swb",
+          "on-click": "swaync-client -t -sw",
+          "on-click-right": "swaync-client -d -sw",
+          "escape": true
+        },
+
+        "custom/wlogout": {
+            "on-click": "wlogout",
+            "format": ""
         }
-    },
-
-    "network" : {
-        "interface": "wlp3s0",
-        "format-wifi": "{essid}  ({signalStrength}%)",
-        "tooltip-format-wifi": "\"Yay, wifi!!\"",
-
-        "format-disconnected": "No network, huh?",
-        "tooltip-format-disconnected": "At least it's better than slow wifi..."
-    },
-
-    "wireplumber" : {
-        "format" : "{volume}%   {icon}",
-        "format-muted" : "mooted",
-        "format-icons": ["", "", ""]
-    },
-
-    "custom/rofi": {
-        "on-click": "rofi -show run",
-        "format": ""
-    },
-
-    "custom/flameshot": {
-        "on-click": "flameshot gui --path ~/Images/Screenshots",
-        "format": ""
-    },
-
-    "custom/copyq": {
-        "on-click": "copyq toggle",
-        "format": ""
-    },
-
-    "custom/swaync": {
-      "tooltip": false,
-      "format": "",
-      "return-type": "json",
-      "exec-if": "which swaync-client",
-      "exec": "swaync-client -swb",
-      "on-click": "swaync-client -t -sw",
-      "on-click-right": "swaync-client -d -sw",
-      "escape": true
-    },
-
-    "custom/wlogout": {
-        "on-click": "wlogout",
-        "format": ""
     }
-}
+
+    // {
+    //     "position" : "bottom",
+    //     "modules-center" : ["network"]
+    // }
+]
