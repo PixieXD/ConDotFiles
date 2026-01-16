@@ -1,8 +1,5 @@
 # GUIDE
-
 # it should be like this for color '\033[38;2;<r>;<g>;<b>2m<text>\033[m'
-
-# END OF GUIDE
 
 quotes=(
     # fucking bake fucking no fucking hana's fucking lyrics
@@ -19,10 +16,12 @@ quotes=(
     "Anima Immortalis Est."
     ":kannasip:"
     "How's your day lately?"
-    "\"Milo ais satu ye bang~\""
+    "Milo ais satu ye bang~"
     "Today's Homework~!"
+    "Bitter Choco Decoration~"
+    "Anti Cyclone by Inabakumori"
 )
 
 tput bold
 tput blink
-echo -e "---- ${quotes[$((RANDOM % ${#quotes[@]}))]} ----"
+echo -e "\"${quotes[$((RANDOM % ${#quotes[@]}))]}\", ${USER}@${HOSTNAME} said."

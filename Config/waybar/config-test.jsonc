@@ -1,0 +1,60 @@
+[
+  {
+    "name": "top",
+    "position": "top",
+    "modules-left": [
+      "custom/rofi"
+    ],
+    "modules-center" : [
+      "hyprland/window"
+    ],
+    "modules-right" : [
+      "battery",
+      "wireplumber",
+      "network",
+      "clock"
+    ],
+
+    // Oh god here comes the Modules, part 2 : electric boogaloo
+
+    // Scratch that, maybe not the logo, might opt for other things...
+    "custom/rofi": {
+      "format": "obligatory Arch Logo here",
+      "on-click": "rofi -show drun"
+    },
+
+    // Its fine, might tweak with the rewrite option tho?
+    "hyprland/window": {
+       "format": "{title}"
+    },
+
+    // The time format... might remove the %S part to save space (if im desperate for one)
+    "clock": {
+      "format": "{:%H:%M:%S, %A %d %b}",
+      "interval": 1
+    },
+
+    // Icons not available, all is left is to just make a charging indicator
+    "battery": {
+      "interval": 30
+    },
+
+    // Icons : not available for now, hopefully :<
+    "wireplumber": {
+      "format-muted": "Muted :("
+    },
+
+    // ??? : Might consider changing it to a symbol and signalStrength only for format, just to save some space
+    "network": {
+      "interval": 30,
+      "format": "{essid} ({signalStrength}%)"
+    }
+  },
+
+  {
+    "name": "left",
+    "position": "left",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-right": ["cpu", "sndio"] // CPU, RAM, GPU (If that exists) usage, WIP.
+  }
+  ]

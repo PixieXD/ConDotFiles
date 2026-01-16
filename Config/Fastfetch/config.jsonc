@@ -1,32 +1,57 @@
+// {
+//     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+//     "logo": {
+//         "source": "~/Images/FastfetchLogos/*.png",
+//         "height": 13,
+//         "width": 33,
+//         "padding": {
+//             "top": 1,
+//             "left": 1
+//         },
+//         "type": "none"
+//     },
+//     "display": {
+//         "separator": " ~ "
+//     },
+//     "modules": [
+//         "break",
+//         { "type": "command", "key": " ", "text": "~/.config/fastfetch/quotes.sh", "format": "{result}"},
+//         { "type": "os", "key": " ", "format": "I use {##DA70D6}{pretty-name} ({arch}){#} by the way!"},
+//         { "type": "cpu", "key": "CPU", "format": "{name}"},
+//         { "type": "gpu", "key": "GPU"},
+//         { "type": "disk", "key": "Disk","format": "{size-used} / {size-total} ({size-percentage})"},
+//         { "type": "memory", "key": "Memory","format": "{used} / {total} ({percentage})"},
+//         { "type": "battery", "key": "Battery", "format": "{capacity} ({status})", "percent": { "green": 100, "yellow": 20}},
+//         { "type": "wm", "key": "Window Manager", "format": "{pretty-name} on {protocol-name}™ ({version})"},
+//         "break",
+//         { "type": "datetime", "key" : " ","format": "~ {day-pretty}/{month-pretty}/{year}, {hour-pretty}:{minute-pretty}:{second-pretty}"}, 
+//         { "type": "uptime", "key": " ","format": "~ You've been up for {formatted} now..."}
+
+//     ]
+// }
+
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-        "source": "~/Images/FastfetchLogos/*.png",
-        "height": 13,
-        "width": 33,
+        "type": "small",
+        "source": "arch",
         "padding": {
-            "top": 1,
-            "left": 1
+            "left": 2,
+            "right": 4,
+            "top": 0
         },
-        "type": "kitty-direct"
+        "color": { "1":"blue", "2":"light_blue"}
     },
-    "display": {
-        "separator": " ~ "
-    },
+
+    "display": { "separator": " ~ " },
+
     "modules": [
-        "break",
         { "type": "command", "key": " ", "text": "~/.config/fastfetch/quotes.sh", "format": "{result}"},
         "break",
-        { "type": "os", "key": " ", "format": "I use {##DA70D6}{pretty-name} ({arch}){#} by the way!"},
-        { "type": "cpu", "key": "CPU", "format": "{name}"},
-        { "type": "gpu", "key": "GPU"},
-        { "type": "disk", "key": "Disk","format": "{size-used} / {size-total} ({size-percentage})"},
-        { "type": "memory", "key": "Memory","format": "{used} / {total} ({percentage})"},
-        { "type": "battery", "key": "Battery", "format": "{capacity} ({status})", "percent": { "green": 100, "yellow": 20}},
-        { "type": "wm", "key": "Window Manager", "format": "{pretty-name} on {protocol-name}™ ({version})"},
-        "break",
-        { "type": "datetime", "key" : " ","format": "~ {day-pretty}/{month-pretty}/{year}, {hour-pretty}:{minute-pretty}:{second-pretty}"}, 
-        { "type": "uptime", "key": " ","format": "~ You've been up for {formatted} now..."}
-
+        { "type": "uptime", "key":" ","format": "Up for {formatted}."},
+        { "type": "disk", "key": "Storage", "format": "{size-used} / {size-total} ({size-percentage})"},
+        { "type": "memory", "key": "Memory", "format": "{used} / {total} ({percentage})"},
+        { "type": "wm", "key": "Window Manager", "format": "{pretty-name}™ on {protocol-name}™ ({version})"},
+        { "type": "colors", "key": "Colors" ,"symbol": "circle"},
     ]
 }
