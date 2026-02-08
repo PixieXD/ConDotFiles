@@ -3,7 +3,7 @@
     "name": "top",
     "position": "top",
     "modules-left": [
-      "custom/rofi"
+      "hyprland/workspaces"
     ],
     "modules-center" : [
       "hyprland/window"
@@ -16,12 +16,6 @@
     ],
 
     // Oh god here comes the Modules, part 2 : electric boogaloo
-
-    // Scratch that, maybe not the logo, might opt for other things...
-    "custom/rofi": {
-      "format": "obligatory Arch Logo here",
-      "on-click": "rofi -show drun"
-    },
 
     // Its fine, might tweak with the rewrite option tho?
     "hyprland/window": {
@@ -49,12 +43,5 @@
       "interval": 30,
       "format": "{essid} ({signalStrength}%)"
     }
-  },
-
-  {
-    "name": "left",
-    "position": "left",
-    "modules-left": ["hyprland/workspaces"],
-    "modules-right": ["cpu", "sndio"] // CPU, RAM, GPU (If that exists) usage, WIP.
   }
-  ]
+]
