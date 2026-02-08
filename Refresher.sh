@@ -1,1 +1,1 @@
-exec ./Tools/waybar-reload
+exec ./Tools/waybar-reload.sh
