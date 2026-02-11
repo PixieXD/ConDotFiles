@@ -1,6 +1,14 @@
 * {
-  color: white;
   font-family: "FreeSans", "Font Awesome 7 Free";
   font-weight: bold;
   font-size: 13px;
+  color: white;
+}
+
+window#waybar.bottom {
+  background-color: transparent;
+}
+
+#workspaces button {
+  font-weight: bold;
 }
