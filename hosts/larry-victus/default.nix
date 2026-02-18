@@ -9,7 +9,6 @@
     hardware = {
         graphics.enable = true;
         nvidia = {
-            graphics.enable = true;
             open = true;
             modesetting.enable = true;
             package = config.boot.kernelPackages.nvidiaPackages.stable;

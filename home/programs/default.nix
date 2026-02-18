@@ -34,14 +34,14 @@
             settings = {
                 General = {
                     disabledTrayIcon = true;
-                    savePath = /home/${username}/Images/Screenshots/;
+                    savePath = /home/${username}/Images/Screenshots;
                     startupLaunch = false;
                     undoLimit = 100;
                     contrastOpacity = 188;
                     useGrimAdapter = true;
-                }
+                };
             };
-        }
+        };
     };
     
     home.packages = with pkgs; [
@@ -57,5 +57,4 @@
         autojump
     ];
 
-    gtk.enable = true;
 }

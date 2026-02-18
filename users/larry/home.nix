@@ -4,10 +4,10 @@
     imports = [
         ../../home/home-core.nix
 
-        ./alacritty
-        ./fastfetch
-        ./hypr
-        ./programs
-        ./waybar
+        ../../home/alacritty
+        ../../home/fastfetch
+        ../../home/hypr/land
+        ../../home/programs
+        ../../home/waybar
     ];
 }
