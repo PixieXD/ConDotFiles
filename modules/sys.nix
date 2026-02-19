@@ -10,7 +10,7 @@
     nix.settings = {
         trusted-users = [ username ];
         experimental-features = [ "nix-command" "flakes" ];
-        auto-optimise-stores = true;
+        auto-optimise-store = true;
     };
 
     boot.loader = {
@@ -117,7 +117,7 @@
         packages = with pkgs; [
             noto-fonts
             noto-fonts-cjk-sans
-            noto-fonts-emoji
+            noto-fonts-color-emoji
 
             nerd-fonts.jetbrains-mono
         ];
