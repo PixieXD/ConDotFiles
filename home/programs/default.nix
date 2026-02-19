@@ -1,6 +1,6 @@
 # to be fair i have no idea how to seperate this, so i'll hold this idea off for now ;)
 
-{ pkgs, config, username, ... }: 
+{ pkgs, config, lib, username, ... }: 
 
 {
     programs = {
@@ -28,6 +28,7 @@
 
     services = {
         copyq.enable = true;
+        udiskie.enable = true;
 
         flameshot = {
             enable = true;
@@ -43,7 +44,7 @@
             };
         };
     };
-    
+
     home.packages = with pkgs; [
         vscodium
         nemo

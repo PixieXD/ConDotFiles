@@ -7,9 +7,8 @@
         xwayland.enable = true;
     };
 
-    enviroment.systemPackages = with pkgs; [
+    environment.systemPackages = with pkgs; [
         rofi
-        waybar
         wlogout
         swayosd
         swaynotificationcenter

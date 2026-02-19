@@ -8,22 +8,27 @@
         nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     };
 
-    outputs = { self, nix-cachyos-kernel, nixpkgs, home-manager, ... } @ inputs: {
+    outputs = inputs @ { self, nix-cachyos-kernel, nixpkgs, home-manager, ... }: {
         nixosConfigurations = {
             larry-victus = let 
                 username = "larry";
+                specialArgs = {inherit username;};
             in nixpkgs.lib.nixosSystem {
+                inherit specialArgs;
                 system = "x86_64-linux";
+
                 modules = [
                     ./hosts/larry-victus
-                    ./users/${username}/home.nix
+                    ./users/${username}
 
-                    home-manager.nixosModules.home-manager {
+                    home-manager.nixosModules.home-manager 
+                    {
                         home-manager = {
                             useGlobalPkgs = true;
                             useUserPackages = true;
                             users.${username} = import ./users/${username}/home.nix;
                             backupFileExtension = "backup";
+                            extraSpecialArgs = inputs // specialArgs;
                         };
                     }
 

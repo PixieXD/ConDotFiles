@@ -6,7 +6,7 @@
 
         ../../home/alacritty
         ../../home/fastfetch
-        ../../home/hypr/land
+        ../../home/hyprland
         ../../home/programs
         ../../home/waybar
     ];

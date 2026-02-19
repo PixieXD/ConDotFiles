@@ -8,7 +8,7 @@
     };
 
     nix.settings = {
-        trusted-users = [ ${username} ];
+        trusted-users = [ username ];
         experimental-features = [ "nix-command" "flakes" ];
         auto-optimise-stores = true;
     };
@@ -56,7 +56,7 @@
         };
 
         openssh = {
-            enable = true
+            enable = true;
             settings.PermitRootLogin = "yes";
             settings.PasswordAuthentication = false;
             openFirewall = true;
@@ -64,7 +64,6 @@
 
         libinput.enable = true;
         udisks2.enable = true;
-        udiskie.enable = true;
         
         displayManager.ly = {
             enable = true;
@@ -123,7 +122,7 @@
             nerd-fonts.jetbrains-mono
         ];
 
-        defaultFonts = {
+        fontconfig.defaultFonts = {
             serif = [ "Noto Serif" "Noto Color Emoji" ];
             sansSerif = [ "Noto Sans" "Noto Color Emoji" ];
             monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji" ];
@@ -137,7 +136,7 @@
     nixpkgs.config.allowUnfree = true;
     time.timeZone = "Asia/Kuala_Lumpur";
     i18n.defaultLocale = "en_US.UTF-8";
-    networking.networkmanager.enable = true
-    # programs.zsh.enable = true; ???
+    networking.networkmanager.enable = true;
+    programs.zsh.enable = true;
 
 }

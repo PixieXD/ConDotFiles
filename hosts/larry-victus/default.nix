@@ -2,6 +2,9 @@
 
 {
     imports = [
+        ../../modules/sys.nix
+        ../../modules/hyprland.nix
+
         ./hardware-configuration.nix
     ];
 
