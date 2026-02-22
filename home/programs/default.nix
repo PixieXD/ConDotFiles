@@ -21,6 +21,7 @@
 
             shellAliases = {
                 rebuild = "sudo nixos-rebuild switch --flake /home/larry/Important/ConDotFiles/#larry-victus --show-trace";
+                waybar-test = "~/Important/ConDotFiles/tools/waybar-reload.sh";
             };
         };
 
@@ -54,6 +55,8 @@
         kdePackages.qt6ct
         nwg-look
         grim
+        overskride
+        networkmanager_dmenu
 
         autojump
     ];
