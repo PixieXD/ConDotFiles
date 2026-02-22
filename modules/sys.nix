@@ -16,6 +16,7 @@
     boot.loader = {
         limine = {
             enable = true;
+            enableEditor = true;
             maxGenerations = 5;
             efiSupport = true;
             extraEntries = ''
@@ -111,6 +112,7 @@
         btop
         inotify-tools
         killall
+        
     ];
 
     fonts = {
@@ -138,5 +140,6 @@
     i18n.defaultLocale = "en_US.UTF-8";
     networking.networkmanager.enable = true;
     programs.zsh.enable = true;
+    hardware.bluetooth.enable = true;
 
 }
