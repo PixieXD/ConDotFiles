@@ -28,6 +28,7 @@
                             useUserPackages = true;
                             users.${username} = import ./users/${username}/home.nix;
                             extraSpecialArgs = inputs // specialArgs;
+                            backupFileExtension = "backup";
                         };
                     }
 
