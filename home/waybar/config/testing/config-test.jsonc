@@ -1,0 +1,90 @@
+[
+  {
+    "name": "top",
+    "position": "top",
+    "spacing" : 10,
+    "modules-left": [
+        "custom/rofi",
+        "hyprland/workspaces"
+    ],
+    "modules-center" : [
+        "hyprland/window"
+    ],
+    "modules-right" : [
+        "battery",
+        "wireplumber",
+        "network",
+        "bluetooth",
+        "clock"
+    ],
+
+    // Oh god here comes the Modules, part 2 : electric boogaloo
+
+    // Scratch that, maybe not the logo, might opt for other things...
+    "custom/rofi": {
+        "format": "            ",
+        "tooltip": false,
+        "on-click": "rofi -show drun"
+    },
+
+    // Its fine, might tweak with the rewrite option tho?
+    "hyprland/window": {
+        "tooltip": false
+    },
+
+    // The time format... might remove the %S part to save space (if im desperate for one)
+    "clock": {
+        "format": "{:%A %d %b, %H:%M:%S}",
+        "interval": 1,
+        "timezone": "Asia/Kuala_Lumpur",
+        "tooltip": false
+    },
+
+    // Icons not available, all is left is to just make a charging indicator
+    "battery": {
+        "design-capacity" : true,
+        "states": {
+            "half": 50,
+            "warning": 30,
+            "bad": 10
+        },
+
+        "format-bad": "!!! {capacity}% !!!",
+
+        "tooltip-format": "Dies at {time}.",
+        "tooltip-format-half": "Dies at {time}.\nMaybe it's time to charge?",
+        "tooltip-format-warning": "Dies at {time}.\nOk you should probably consider charging...",
+        "tooltip-format-bad": "Dies at {time}.\nYou're on your own..."
+    },
+
+    // Icons : not available for now, hopefully :<
+    "wireplumber": {
+        "tooltip": false,
+        "format-muted": "Muted"
+    },
+
+    // ??? : Might consider changing it to a symbol and signalStrength only for format, just to save some space
+    "network": {
+        "on-click" : "networkmanager_dmenu",
+
+        "interval": 30,
+        "tooltip" : false,
+
+        "format-disabled" : "",
+        "format-disconnected" : "No Wifi?",
+        "format-ethernet" : "Ethernet !!!",
+        "format-wifi": "{essid} - {signalStrength}%"
+    },
+
+    "bluetooth": {
+        "on-click" : "overskride",
+        "tooltip" : false,
+
+        "format-disabled" : "",
+        "format-no-controller" : "",
+        "format-off" : "",
+        "format-on" : "",
+        "format-connected" : " - {device_alias}"
+    }
+  }
+]

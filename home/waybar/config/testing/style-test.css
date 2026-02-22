@@ -1,0 +1,36 @@
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "FreeSans", "Font Awesome 7 Free";
+  font-weight: bold;
+  font-size: 13px;
+  color: white;
+  border-color: white;
+}
+
+
+window#waybar {
+    background: none;
+    color: white;
+}
+
+#workspaces button {
+  font-weight: bold;
+}
+
+#custom-rofi {
+  background-image: url('./Stamp0199.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+
+#battery.warning {
+  background-color: yellow;
+}
+
+#battery.bad {
+  background-color: red;
+}
