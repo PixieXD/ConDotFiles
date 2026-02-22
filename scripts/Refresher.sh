@@ -1,1 +1,0 @@
-exec ./Tools/waybar-reload.sh
