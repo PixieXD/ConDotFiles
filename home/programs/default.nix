@@ -4,8 +4,8 @@
 
 {
     programs = {
-        floorp.enable = true;
         alacritty.enable = true;
+        floorp.enable = true;
         vesktop.enable = true;
 
         zsh = {
