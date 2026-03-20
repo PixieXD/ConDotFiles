@@ -2,8 +2,6 @@
 
 {
     imports = [
-        ../../hjem
-
         ../../hjem/alacritty
         ../../hjem/fastfetch
         ../../hjem/hyprland
