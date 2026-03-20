@@ -3,12 +3,14 @@
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-        home-manager.url = "github:nix-community/home-manager";
-        home-manager.inputs.nixpkgs.follows = "nixpkgs";
-        nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+        cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+        hjem = {
+            url = "github:feel-co/hjem";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
     };
 
-    outputs = inputs @ { self, nix-cachyos-kernel, nixpkgs, home-manager, ... }: {
+    outputs = inputs @ { self, nixpkgs, ... }: {
         nixosConfigurations = {
             larry-victus = let 
                 username = "larry";
@@ -18,23 +20,13 @@
                 system = "x86_64-linux";
 
                 modules = [
+                    inputs.hjem.nixosModules.default
                     ./hosts/larry-victus
                     ./users/${username}
 
-                    home-manager.nixosModules.home-manager 
-                    {
-                        home-manager = {
-                            useGlobalPkgs = true;
-                            useUserPackages = true;
-                            users.${username} = import ./users/${username}/home.nix;
-                            extraSpecialArgs = inputs // specialArgs;
-                            backupFileExtension = "backup";
-                        };
-                    }
-
                     (
                         { pkgs, ... } : {
-                            nixpkgs.overlays = [ nix-cachyos-kernel.overlays.pinned ];
+                            nixpkgs.overlays = [ inputs.cachyos-kernel.overlays.pinned ];
                             boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-lts-lto;
                             nix.settings.substituters = [ "https://attic.xuyh0120.win/lantian" ];
                             nix.settings.trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
