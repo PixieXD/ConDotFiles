@@ -2,6 +2,6 @@
 
 {
     hjem.users.${username} = {
-        directory = /home/${username}
+        directory = /home/${username};
     };
 }
