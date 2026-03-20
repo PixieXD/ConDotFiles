@@ -24,6 +24,10 @@
                     ./hosts/larry-victus
                     ./users/${username}
 
+                    hjem.users.${username} = {
+                        directory = /home/${username};
+                    };
+
                     (
                         { pkgs, ... } : {
                             nixpkgs.overlays = [ inputs.cachyos-kernel.overlays.pinned ];
