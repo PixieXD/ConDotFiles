@@ -2,7 +2,7 @@
 
 {
     hjem.users.${username}.xdg.config.files.".config/flameshot/flameshot.ini" = {
-        generators = lib.generators.toINI {};
+        generator = lib.generators.toINI {};
         value = {
             General = {
                 disabledTrayIcon = true;
