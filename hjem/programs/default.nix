@@ -8,7 +8,6 @@
             floorp-bin
             flameshot
             vesktop
-            copyq
             udiskie
             vscodium
             nemo
