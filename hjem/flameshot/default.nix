@@ -10,6 +10,6 @@
             undoLimit = 100;
             contrastOpacity = 188;
             useGrimAdapter = true;            
-        }
+        };
     };
 }
