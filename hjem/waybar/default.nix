@@ -1,5 +1,5 @@
 { username, ... }:
 
 {
-    hjem.users.${username}.files.".config/waybar" = ./config;
+    hjem.users.${username}.xdg.config.files.".config/waybar".source = ./config;
 }

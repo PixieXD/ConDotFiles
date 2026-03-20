@@ -1,5 +1,5 @@
 { username, ... }:
 
 {
-    hjem.users.${username}.files.".config/alacritty" = ./config;
+    hjem.users.${username}.xdg.config.files.".config/alacritty".source = ./config;
 }

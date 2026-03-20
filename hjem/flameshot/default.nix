@@ -1,7 +1,7 @@
 { lib, username, ... }:
 
 {
-    hjem.users.${username}.files.".config/flameshot" = {
+    hjem.users.${username}.xdg.config.files.".config/flameshot/flameshot.ini" = {
         generators = lib.generators.toINI {};
         General = {
             disabledTrayIcon = true;

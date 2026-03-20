@@ -1,5 +1,5 @@
 { username, ... }:
 
 {
-    hjem.users.${username}.files.".config/fastfetch" = ./config;
+    hjem.users.${username}.xdg.config.files.".config/fastfetch".source = ./config;
 }

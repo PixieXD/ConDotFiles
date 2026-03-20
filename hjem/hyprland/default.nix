@@ -1,5 +1,5 @@
 { username, ... }:
 
 {
-    hjem.users.${username}.files.".config/hypr" = ./config;
+    hjem.users.${username}.xdg.config.files.".config/hypr".source = ./config;
 }
