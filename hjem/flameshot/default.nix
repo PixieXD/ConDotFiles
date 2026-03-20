@@ -3,13 +3,15 @@
 {
     hjem.users.${username}.xdg.config.files.".config/flameshot/flameshot.ini" = {
         generators = lib.generators.toINI {};
-        General = {
-            disabledTrayIcon = true;
-            savePath = "/home/${username}/Images/Screenshots";
-            startupLaunch = false;
-            undoLimit = 100;
-            contrastOpacity = 188;
-            useGrimAdapter = true;            
+        value = {
+            General = {
+                disabledTrayIcon = true;
+                startupLaunch = false;
+                savePath = "/home/${username}/Images/Screenshots";
+                undoLimit = 100;
+                contrastOpacity = 188;
+                useGrimAdapter = true;            
+            };
         };
     };
 }
