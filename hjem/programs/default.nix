@@ -5,7 +5,8 @@
     hjem.users.${username} = {
         packages = with pkgs; [
             alacritty
-            floorp
+            floorp-bin
+            flameshot
             vesktop
             copyq
             udiskie
