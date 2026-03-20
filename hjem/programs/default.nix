@@ -26,7 +26,7 @@
             imagemagick
 
             autojump
-        ]
+        ];
     };
 
     programs.zsh = {
