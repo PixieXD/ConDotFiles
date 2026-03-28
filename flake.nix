@@ -6,7 +6,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nvf.url = "github:notashelf/nvf";
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-    # import-tree.url = "github:vic/import-tree";
+    import-tree.url = "github:vic/import-tree";
 
     hjem = {
       url = "github:feel-co/hjem";
