@@ -1,5 +1,5 @@
 {
-  description = "Description for the project";
+  description = "Larry's own personal NixOS System";
 
   inputs = {
     parts.url = "github:hercules-ci/flake-parts";
