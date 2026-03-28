@@ -112,7 +112,7 @@
         btop
         inotify-tools
         killall
-        
+        autojump
     ];
 
     fonts = {
@@ -141,5 +141,9 @@
     networking.networkmanager.enable = true;
     programs.zsh.enable = true;
     hardware.bluetooth.enable = true;
+
+    hardware.enableRedistributableFirmware = true;
+    hardware.cpu.intel.updateMicrocode = true;
+
 
 }

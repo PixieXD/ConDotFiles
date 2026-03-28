@@ -24,8 +24,6 @@
             xcur2png
             krita
             imagemagick
-
-            autojump
         ];
     };
 
@@ -45,4 +43,6 @@
             waybar-test = "~/Important/ConDotFiles/tools/waybar-reload.sh";
         };
     };
+
+    programs.steam.enable = true;
 }
