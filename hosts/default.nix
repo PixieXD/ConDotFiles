@@ -9,7 +9,7 @@
       hostname = "larry-victus";
       specialArgs = {inherit username hostname;};
     in inputs.nixpkgs.lib.nixosSystem {
-      systems = "x86_64-linux";
+      system = "x86_64-linux";
       inherit specialArgs;
       modules = [ 
         inputs.hjem.nixosModules.default
@@ -25,6 +25,6 @@
         )
         
         ];
-    }
-  }
+    };
+  };
 }

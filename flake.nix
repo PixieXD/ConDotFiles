@@ -4,7 +4,7 @@
   inputs = {
     parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nvf.url = "github:notashelf/nvf";
+    # nvf.url = "github:notashelf/nvf";
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     hjem = {
@@ -18,5 +18,6 @@
   outputs = inputs@{ parts, ... }:
     parts.lib.mkFlake { inherit inputs; } {
       imports = [ ./hosts ];
+      systems = [ "x86_64-linux" ];
     };
 }

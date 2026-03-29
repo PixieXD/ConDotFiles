@@ -7,5 +7,5 @@
     ".config/hypr/autostart.conf".source = ./autostart.conf;
     ".config/hypr/env.conf".source = ./env.conf;
     ".config/hypr/keybinds.conf".source = ./keybinds.conf;
-  }
+  };
 }

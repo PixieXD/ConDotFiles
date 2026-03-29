@@ -3,7 +3,7 @@
 {
   programs.zsh = {
     syntaxHighlighting.enable = true;
-    autoSuggestions.enable = true;
+    autosuggestions.enable = true;
     enableCompletion = true;
 
     ohMyZsh = {
@@ -15,5 +15,5 @@
       rebuild = "sudo nixos-rebuild switch --flake /home/larry/Important/ConDotFiles/#larry-victus";
       rebuild-trace = "sudo nixos-rebuild switch --flake /home/larry/Important/ConDotFiles/#larry-victus --show-trace";
     };
-  }
+  };
 }

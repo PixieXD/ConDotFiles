@@ -6,7 +6,7 @@
     ./services.nix
     ./hardware.nix
     ./options.nix
-    ./hardware-configurations.nix
+    ./hardware-configuration.nix
 
     ../../modules
   ];
