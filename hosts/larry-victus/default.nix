@@ -1,31 +1,25 @@
-{ config, lib, pkgs, ... }:
+{ config, pkgs, username, hostname, ... }: 
 
 {
-    imports = [
-        ../../modules/sys.nix
-        ../../modules/hyprland.nix
+  imports = [
+    ./programs.nix
+    ./services.nix
+    ./hardware.nix
+    ./options.nix
+    ./hardware-configuration.nix
 
-        ./hardware-configuration.nix
-    ];
+    ../../modules
+  ];
 
 
-    hardware = {
-        graphics.enable = true;
-        nvidia = {
-            open = true;
-            modesetting.enable = true;
-            package = config.boot.kernelPackages.nvidiaPackages.stable;
-            nvidiaSettings = true;
-            prime = {
-                sync.enable = true;
-                intelBusId = "PCI:0:2:0";
-                nvidiaBusId = "PCI:1:0:0";
-            };
-        };
-    };
-    
-    networking.hostName = "larry-victus";
-    services.xserver.videoDrivers = [ "nvidia" ];
+  users.users.${username} = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "networkmanager" ];
+    shell = pkgs.zsh;
+  };
 
-    system.stateVersion = "25.11"; # Did you read the comment? yes :)
+  hjem.users.${username}.directory = config.users.users.${username}.home;
+  networking.hostName = hostname;
+
+  system.stateVersion = "25.11"; # Did you read the comment? yes :)
 }
