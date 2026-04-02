@@ -22,7 +22,7 @@
       waybar
       rofi
       copyq
-      wlogout
+      wleave
       swayosd
       swaynotificationcenter
       hyprcursor
@@ -30,7 +30,7 @@
       hyprland-qt-support
       egl-wayland
       hyprpolkitagent
-      swww
+      awww
       grim
       udiskie
       catppuccin-gtk
@@ -50,6 +50,7 @@
       win2xcur
       xcur2png
       imagemagick
+      autojump
     ];
   };
 
