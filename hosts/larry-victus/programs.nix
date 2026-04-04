@@ -17,6 +17,7 @@
       networkmanager_dmenu
       krita
       libreoffice-fresh
+      obsidian
 
       # system things
       waybar
