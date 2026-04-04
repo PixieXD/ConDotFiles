@@ -3,11 +3,8 @@
 {
   boot.loader = {
     limine = {
-      extraEntries = ''
-          /Windows 11
-            protocol: efi
-            path: uuid(bfd3a7a4-d120-437b-899b-0549f3d725c0):/EFI/Microsoft/Boot/bootmgfw.efi
-      '';
+      enableEditor = true;
+      efiSupport = true;
 
       style = {
         wallpapers = [];
