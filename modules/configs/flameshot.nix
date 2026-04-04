@@ -1,7 +1,7 @@
 { lib, username, ... }:
 
 {
-    hjem.users.${username}.xdg.config.files.".config/flameshot/flameshot.ini" = {
+    hjem.users.${username}.xdg.config.files."flameshot/flameshot.ini" = {
         generator = lib.generators.toINI {};
         value = {
             General = {

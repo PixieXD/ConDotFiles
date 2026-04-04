@@ -41,5 +41,7 @@
         };
       };
     };
+
+    "alacritty/style.toml".source = ./style.toml;
   };
 }

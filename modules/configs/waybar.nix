@@ -2,14 +2,14 @@
 
 {
   hjem.users.${username}.xdg.config.files = {
-    ".config/waybar/config.json" = {
+    "waybar/config.jsonc" = {
       generator = lib.generators.toJSON {};
       value = {
         position = "top";
         modules-left = [
           "custom/wlogout"
           "custom/rofi"
-          "hyprland/workspace"
+          "hyprland/workspaces"
         ];
         modules-center = [
           "custom/flameshot"
@@ -22,8 +22,6 @@
           "wireplumber"
           "custom/swaync"
         ];
-
-        reload_style_on_change = true;
 
         battery = {
           interval = 20;
@@ -98,7 +96,7 @@
       };
     };
 
-    ".config/waybar/style.css".text =
+    "waybar/style.css".text =
       ''
         * {
           font-family: FontAwesome;
@@ -108,7 +106,7 @@
 
         /* Variables */
         @define-color bgcolor rgba(0, 0, 0, 0.75);
-        @define-color customviolet rgb (95, 50, 163);
+        @define-color customviolet rgb(95, 50, 163);
 
         window#waybar {
           background-color: rgba(148, 0, 211, 0);

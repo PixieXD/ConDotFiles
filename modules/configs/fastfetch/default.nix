@@ -3,7 +3,7 @@
 
 {
   hjem.users.${username}.xdg.config.files = {
-    ".config/fastfetch/config.json" = {
+    "fastfetch/config.jsonc" = {
       generator = lib.generators.toJSON {};
       value = {
         logo = {
@@ -20,8 +20,6 @@
           };
         };
 
-        display = { seperator = " ~ "; };
-
         modules = [
           { type = "command"; key = " "; text = "~/.config/fastfetch/quotes.sh"; format = "{result}"; }
           "break"
@@ -34,6 +32,6 @@
       };
     };
 
-    ".config/fastfetch/quotes.sh".source = ./quotes.sh;
+    "fastfetch/quotes.sh".source = ./quotes.sh;
   };
 }
