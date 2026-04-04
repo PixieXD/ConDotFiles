@@ -14,11 +14,18 @@
 
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "input" ];
     shell = pkgs.zsh;
   };
 
-  hjem.users.${username}.directory = config.users.users.${username}.home;
+  hjem = {
+    users.${username} = {
+      directory = "/home/larry";
+    };
+    clobberByDefault = true;
+    linker = pkgs.smfh;
+  };
+
   networking.hostName = hostname;
 
   system.stateVersion = "25.11"; # Did you read the comment? yes :)
