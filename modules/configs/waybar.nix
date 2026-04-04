@@ -7,7 +7,7 @@
       value = {
         position = "top";
         modules-left = [
-          "custom/wlogout"
+          "custom/power"
           "custom/rofi"
           "hyprland/workspaces"
         ];
@@ -89,8 +89,8 @@
           escape = true;
         };
 
-        "custom/wlogout" = {
-          on-click = "wlogout";
+        "custom/power" = {
+          on-click = "wleave";
           format = "";
         };
       };
