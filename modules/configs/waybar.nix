@@ -146,7 +146,7 @@
           border-bottom: 4px solid @customviolet;
         }
 
-        #custom-wlogout {
+        #custom-power {
           background-color: @bgcolor;
           padding: 0px 15px 0px 15px;
           border-bottom: 4px solid @customviolet;
