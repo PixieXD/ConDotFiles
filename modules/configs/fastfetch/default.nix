@@ -24,7 +24,7 @@
           { type = "command"; key = " "; text = "~/.config/fastfetch/quotes.sh"; format = "{result}"; }
           "break"
           { type = "uptime"; key = " "; format = "Up for {formatted}."; }
-          { type = "disk"; key = "Storage"; format = "{size-used} / {size-total} ({size-percentage})"; }
+          { type = "disk"; key = "Storage"; format = "{size-used} / {size-total} ({size-percentage}) - Since {days} days."; }
           { type = "memory"; key = "Memory"; format = "{used} / {total} ({percentage})"; }
           { type = "wm"; key = "Window Manager"; format = "{pretty-name}™ on {protocol-name}™ ({version})"; }
           { type = "colors"; key = "Colors"; symbol = "circle"; }
