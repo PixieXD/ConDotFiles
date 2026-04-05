@@ -13,7 +13,7 @@
       inherit specialArgs;
       modules = [ 
         inputs.hjem.nixosModules.default
-        nvf.nixosModules.default
+        inputs.nvf.nixosModules.default
         ./${hostname}
 
         (
