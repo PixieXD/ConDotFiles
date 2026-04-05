@@ -39,7 +39,6 @@
       nwg-look
 
       # commands
-      neovim
       git
       wget
       fastfetchMinimal
