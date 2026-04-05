@@ -63,5 +63,6 @@
     };
     zsh.enable = true;
     steam.enable = true;
+    nvf.enable = true;
   };
 }

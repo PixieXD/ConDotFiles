@@ -5,6 +5,7 @@
     ./configs/alacritty
     ./configs/wleave
     ./configs/zsh.nix
+    ./configs/nvim.nix
     ./configs/flameshot.nix
     ./configs/waybar.nix
     ./configs/limine.nix

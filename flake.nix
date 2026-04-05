@@ -4,7 +4,6 @@
   inputs = {
     parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    # nvf.url = "github:notashelf/nvf";
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     hjem = {
@@ -12,7 +11,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
+    nvf = { 
+      url = "github:notashelf/nvf";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ parts, ... }:
