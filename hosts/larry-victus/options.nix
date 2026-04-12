@@ -12,11 +12,6 @@
     auto-optimise-store = true;
   };
 
-  nix.gc = {
-    automatic = true;
-    dates = "14day";
-  };
-
   boot.loader = {
     limine = {
       enable = true;
