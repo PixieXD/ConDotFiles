@@ -5,13 +5,11 @@
     packages = with pkgs; [
       # applications
       alacritty
-      ghostty # temp terminal?
       floorp-bin
       flameshot
       vesktop
       vscodium
       nemo
-      bluej
       telegram-desktop
       overskride
       networkmanager_dmenu
@@ -39,7 +37,6 @@
       nwg-look
 
       # commands
-      git
       wget
       fastfetchMinimal
       btop
@@ -50,7 +47,6 @@
       win2xcur
       xcur2png
       imagemagick
-      autojump
     ];
   };
 
@@ -60,8 +56,38 @@
       withUWSM = false;
       xwayland.enable = true;
     };
+
+    git = {
+      enable = true;
+      config = {
+        user = {
+          name = "Pixie";
+          email = "tikt9440@tutamail.com";
+        };
+
+        init = {
+          defaultBranch = "main";
+        };
+
+        url = {
+          "https://github.com/" {
+            insteadOf = [ "gh:" "github:" ];
+          };
+        };
+      };
+
+    };
+
+    nh = {
+      enable = true;
+      clean.enable = true;
+      clean.extraArgs = "--keep-since 4d --keep 3";
+      flake = "/home/${username}/Important/ConDotFiles";
+    };
+
     zsh.enable = true;
     steam.enable = true;
     nvf.enable = true;
+    java.enable = true;
   };
 }
