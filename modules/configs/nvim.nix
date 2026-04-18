@@ -47,6 +47,7 @@
           bash.enable = true;
           json.enable = true;
           toml.enable = true;
+          qml.enable = true;
         };
 
         ui = {

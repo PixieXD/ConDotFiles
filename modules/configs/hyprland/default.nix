@@ -1,6 +1,8 @@
-{ lib, username, ... }:
-
 {
+  lib,
+  username,
+  ...
+}: {
   hjem.users.${username}.xdg.config.files = {
     "hypr/hyprland.conf".source = ./hyprland.conf;
     "hypr/animations.conf".source = ./animations.conf;
@@ -9,3 +11,4 @@
     "hypr/keybinds.conf".source = ./keybinds.conf;
   };
 }
+

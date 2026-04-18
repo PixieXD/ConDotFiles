@@ -11,15 +11,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nvf = { 
+    nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ parts, ... }:
-    parts.lib.mkFlake { inherit inputs; } {
-      imports = [ ./hosts ];
-      systems = [ "x86_64-linux" ];
+  outputs = inputs @ {parts, ...}:
+    parts.lib.mkFlake {inherit inputs;} {
+      imports = [./hosts];
+      systems = ["x86_64-linux"];
     };
 }

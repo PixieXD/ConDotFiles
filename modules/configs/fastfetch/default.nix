@@ -1,7 +1,9 @@
-{ pkgs, lib, username, ... }:
-
-
 {
+  pkgs,
+  lib,
+  username,
+  ...
+}: {
   hjem.users.${username}.xdg.config.files = {
     "fastfetch/config.jsonc" = {
       generator = lib.generators.toJSON {};
@@ -14,20 +16,45 @@
             right = 4;
             top = 0;
           };
-          color = { 
-            "1" = "blue"; 
+          color = {
+            "1" = "blue";
             "2" = "light_blue";
           };
         };
 
         modules = [
-          { type = "command"; key = " "; text = "~/.config/fastfetch/quotes.sh"; format = "{result}"; }
+          {
+            type = "command";
+            key = " ";
+            text = "~/.config/fastfetch/quotes.sh";
+            format = "{result}";
+          }
           "break"
-          { type = "uptime"; key = " "; format = "Up for {formatted}."; }
-          { type = "disk"; key = "Storage"; format = "{size-used} / {size-total} ({size-percentage}) - Since {days} days."; }
-          { type = "memory"; key = "Memory"; format = "{used} / {total} ({percentage})"; }
-          { type = "wm"; key = "Window Manager"; format = "{pretty-name}™ on {protocol-name}™ ({version})"; }
-          { type = "colors"; key = "Colors"; symbol = "circle"; }
+          {
+            type = "uptime";
+            key = " ";
+            format = "Up for {formatted}.";
+          }
+          {
+            type = "disk";
+            key = "Storage";
+            format = "{size-used} / {size-total} ({size-percentage}) - Since {days} days.";
+          }
+          {
+            type = "memory";
+            key = "Memory";
+            format = "{used} / {total} ({percentage})";
+          }
+          {
+            type = "wm";
+            key = "Window Manager";
+            format = "{pretty-name}™ on {protocol-name}™ ({version})";
+          }
+          {
+            type = "colors";
+            key = "Colors";
+            symbol = "circle";
+          }
         ];
       };
     };
@@ -35,3 +62,4 @@
     "fastfetch/quotes.sh".source = ./quotes.sh;
   };
 }
+

@@ -1,6 +1,4 @@
-{ config, ... }:
-
-{
+{config, ...}: {
   services.displayManager.ly = {
     settings = {
       allow_empty_password = true;
@@ -36,3 +34,4 @@
     };
   };
 }
+

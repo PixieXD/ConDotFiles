@@ -1,6 +1,8 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   services = {
     # printing.enable = true;
     libinput.enable = true;
@@ -25,7 +27,6 @@
       enable = true;
       x11Support = true;
     };
-
-
   };
 }
+

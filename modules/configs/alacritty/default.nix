@@ -1,13 +1,19 @@
-{ lib, username, pkgs, ... }:
-
 {
+  lib,
+  username,
+  pkgs,
+  ...
+}: {
   hjem.users.${username}.xdg.config.files = {
     "alacritty/alacritty.toml" = {
       generator = (pkgs.formats.toml {}).generate "alacritty.toml";
 
       value = {
-        general.import = [ "~/.config/alacritty/style.toml" ];
-        window.padding = { x = 10; y = 10; };
+        general.import = ["~/.config/alacritty/style.toml"];
+        window.padding = {
+          x = 10;
+          y = 10;
+        };
         font = {
           size = 15;
 
@@ -26,7 +32,10 @@
 
         cursor = {
           unfocused_hollow = false;
-          style = { shape = "Beam"; blinking = "Always"; };
+          style = {
+            shape = "Beam";
+            blinking = "Always";
+          };
         };
 
         terminal.osc52 = "CopyPaste";
@@ -34,9 +43,21 @@
 
         keyboard = {
           bindings = [
-            { key = "-"; mods = "Control"; action = "DecreaseFontSize"; }
-            { key = "="; mods = "Control"; action = "IncreaseFontSize"; }
-            { key = "V"; mods = "Control"; action = "Paste"; }
+            {
+              key = "-";
+              mods = "Control";
+              action = "DecreaseFontSize";
+            }
+            {
+              key = "=";
+              mods = "Control";
+              action = "IncreaseFontSize";
+            }
+            {
+              key = "V";
+              mods = "Control";
+              action = "Paste";
+            }
           ];
         };
       };
@@ -45,3 +66,4 @@
     "alacritty/style.toml".source = ./style.toml;
   };
 }
+

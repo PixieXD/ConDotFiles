@@ -1,6 +1,10 @@
-{ config, pkgs, username, hostname, ... }: 
-
 {
+  config,
+  pkgs,
+  username,
+  hostname,
+  ...
+}: {
   imports = [
     ./programs.nix
     ./services.nix
@@ -11,10 +15,9 @@
     ../../modules
   ];
 
-
   users.users.${username} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "input" ];
+    extraGroups = ["wheel" "networkmanager" "input"];
     shell = pkgs.zsh;
   };
 
@@ -30,3 +33,4 @@
 
   system.stateVersion = "25.11"; # Did you read the comment? yes :)
 }
+

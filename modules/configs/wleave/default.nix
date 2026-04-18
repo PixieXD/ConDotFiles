@@ -1,6 +1,8 @@
-{ lib, username, ... }:
-
 {
+  lib,
+  username,
+  ...
+}: {
   hjem.users.${username}.xdg.config.files = {
     "wleave/layout.json" = {
       generator = lib.generators.toJSON {};
@@ -94,3 +96,4 @@
     '';
   };
 }
+

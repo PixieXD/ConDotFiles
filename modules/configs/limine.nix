@@ -1,6 +1,4 @@
-{config, ... }:
-
-{
+{config, ...}: {
   boot.loader = {
     limine = {
       enableEditor = true;
@@ -21,3 +19,4 @@
     };
   };
 }
+

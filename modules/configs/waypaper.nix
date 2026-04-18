@@ -1,6 +1,8 @@
-{ lib, username, ... }:
-
 {
+  lib,
+  username,
+  ...
+}: {
   hjem.users.${username}.xdg.config.files = {
     "waypaper/config.ini" = {
       generator = lib.generators.toINI {};
@@ -22,3 +24,4 @@
     };
   };
 }
+

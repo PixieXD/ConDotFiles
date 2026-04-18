@@ -1,6 +1,9 @@
-{ pkgs, config, username, ... }:
-
 {
+  pkgs,
+  config,
+  username,
+  ...
+}: {
   hjem.users.${username} = {
     packages = with pkgs; [
       # applications
@@ -35,18 +38,21 @@
       catppuccin-gtk
       kdePackages.qt6ct
       nwg-look
+      quickshell
 
       # commands
       wget
+      # ffmpeg
       fastfetchMinimal
       btop
       inotify-tools
       killall
       xbindkeys
-      unzip
-      win2xcur
-      xcur2png
-      imagemagick
+      # unzip
+      # win2xcur
+      # xcur2png
+      # imagemagick
+      # xcursorgen
     ];
   };
 
@@ -70,12 +76,11 @@
         };
 
         url = {
-          "https://github.com/" {
-            insteadOf = [ "gh:" "github:" ];
+          "https://github.com/" = {
+            insteadOf = ["gh:" "github:"];
           };
         };
       };
-
     };
 
     nh = {
@@ -91,3 +96,4 @@
     java.enable = true;
   };
 }
+

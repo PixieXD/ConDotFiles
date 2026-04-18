@@ -1,6 +1,8 @@
-{ lib, username, ... }:
-
 {
+  lib,
+  username,
+  ...
+}: {
   hjem.users.${username}.xdg.config.files = {
     "waybar/config.jsonc" = {
       generator = lib.generators.toJSON {};
@@ -96,102 +98,102 @@
       };
     };
 
-    "waybar/style.css".text =
-      ''
-        * {
-          font-family: FontAwesome;
-          font-size: 13px;
-          color: white;
-        }
+    "waybar/style.css".text = ''
+      * {
+        font-family: FontAwesome;
+        font-size: 13px;
+        color: white;
+      }
 
-        /* Variables */
-        @define-color bgcolor rgba(0, 0, 0, 0.75);
-        @define-color customviolet rgb(95, 50, 163);
+      /* Variables */
+      @define-color bgcolor rgba(0, 0, 0, 0.75);
+      @define-color customviolet rgb(95, 50, 163);
 
-        window#waybar {
-          background-color: rgba(148, 0, 211, 0);
-        }
+      window#waybar {
+        background-color: rgba(148, 0, 211, 0);
+      }
 
-        #clock{
-          background-color: @bgcolor;
-          padding: 0px 15px 0px 15px;
-          border-bottom: 4px solid @customviolet;
-        }
+      #clock{
+        background-color: @bgcolor;
+        padding: 0px 15px 0px 15px;
+        border-bottom: 4px solid @customviolet;
+      }
 
-        #custom-copyq {
-          background-color: @bgcolor;
-          padding: 0px 15px 0px 15px;
-          border-bottom: 4px solid @customviolet;
-          border-bottom-right-radius: 5px;
-        }
+      #custom-copyq {
+        background-color: @bgcolor;
+        padding: 0px 15px 0px 15px;
+        border-bottom: 4px solid @customviolet;
+        border-bottom-right-radius: 5px;
+      }
 
-        #custom-flameshot {
-          background-color: @bgcolor;
-          padding: 0px 15px 0px 15px;
-          border-bottom: 4px solid @customviolet;
-          border-bottom-left-radius: 5px;
-        }
+      #custom-flameshot {
+        background-color: @bgcolor;
+        padding: 0px 15px 0px 15px;
+        border-bottom: 4px solid @customviolet;
+        border-bottom-left-radius: 5px;
+      }
 
-        #battery{
-          background-color: @bgcolor;
-          padding: 0px 15px 0px 15px;
-          margin-left: 5px;
-          border-bottom: 4px solid @customviolet;
-          border-bottom-left-radius: 5px;
-        }
+      #battery{
+        background-color: @bgcolor;
+        padding: 0px 15px 0px 15px;
+        margin-left: 5px;
+        border-bottom: 4px solid @customviolet;
+        border-bottom-left-radius: 5px;
+      }
 
-        #network{
-          background-color: @bgcolor;
-          padding: 0px 15px 0px 15px;
-          border-bottom: 4px solid @customviolet;
-        }
+      #network{
+        background-color: @bgcolor;
+        padding: 0px 15px 0px 15px;
+        border-bottom: 4px solid @customviolet;
+      }
 
-        #custom-power {
-          background-color: @bgcolor;
-          padding: 0px 15px 0px 15px;
-          border-bottom: 4px solid @customviolet;
-        }
+      #custom-power {
+        background-color: @bgcolor;
+        padding: 0px 15px 0px 15px;
+        border-bottom: 4px solid @customviolet;
+      }
 
-        #custom-rofi {
-          background-color: @bgcolor;
-          padding: 0px 15px 0px 15px;
-          border-bottom: 4px solid @customviolet;
-        }
+      #custom-rofi {
+        background-color: @bgcolor;
+        padding: 0px 15px 0px 15px;
+        border-bottom: 4px solid @customviolet;
+      }
 
-        #wireplumber  {
-          background-color: @bgcolor; 
-          padding: 0px 10px 0px 10px;
-          border-bottom: 4px solid @customviolet;
-        }
+      #wireplumber  {
+        background-color: @bgcolor;
+        padding: 0px 10px 0px 10px;
+        border-bottom: 4px solid @customviolet;
+      }
 
-        #custom-swaync {
-          background-color: @bgcolor; 
-          padding: 0px 10px 0px 10px;
-          border-bottom: 4px solid @customviolet;
-        }
+      #custom-swaync {
+        background-color: @bgcolor;
+        padding: 0px 10px 0px 10px;
+        border-bottom: 4px solid @customviolet;
+      }
 
-        #workspaces {
-          background-color: @bgcolor;
-          border-bottom: 4px solid @customviolet;
-          border-bottom-right-radius: 5px;
-        }
+      #workspaces {
+        background-color: @bgcolor;
+        border-bottom: 4px solid @customviolet;
+        border-bottom-right-radius: 5px;
+      }
 
-        #workspaces button{
-          color: rgb(128, 128, 128);
-        }
+      #workspaces button{
+        color: rgb(128, 128, 128);
+      }
 
-        #workspaces button.active {
-          background-color: rgb(58, 31, 100);
-          border-radius: 0px;
-        }
+      #workspaces button.active {
+        background-color: rgb(58, 31, 100);
+        border-radius: 0px;
+      }
 
-        #workspaces button:hover {
-          box-shadow: none;
-          background: @customviolet;
-          border-color: rgb(112, 87, 226);
-          transition-duration: 0.3s;
-          border-radius: 0px;
-        }
-      '';
+      #workspaces button:hover {
+        box-shadow: none;
+        background: @customviolet;
+        border-color: rgb(112, 87, 226);
+        transition-duration: 0.3s;
+        border-radius: 0px;
+      }
+    '';
   };
 }
+
