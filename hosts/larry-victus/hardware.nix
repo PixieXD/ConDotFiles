@@ -18,6 +18,23 @@
     bluetooth.enable = true;
   };
 
+  fileSystems = {
+    "/".options = ["compress=zstd:3" "noatime"];
+    "/home".options = ["compress=zstd:3" "noatime"];
+    "/nix".options = ["compress=zstd:3" "noatime"];
+  };
+
+  zramSwap = {
+    enable = true;
+    memoryPercent = 50;
+    memoryMax = 8589934592;
+    algorithm = "zstd";
+  };
+
+  boot.tmp = {
+    useTmpfs = true;
+    tmpfsSize = 50;
+  };
+
   services.xserver.videoDrivers = ["nvidia"];
 }
-
