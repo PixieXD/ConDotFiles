@@ -3,26 +3,29 @@
   lib,
   username,
   ...
-}: {
+}: let
+  pathImg = ./images/mafuyu.png;
+  imgOut = pkgs.runCommand "iconConvert" {} ''
+    ${lib.getExe' pkgs.libsixel "img2sixel"} -w 200 -h 200 ${pathImg} > $out
+  '';
+in {
   hjem.users.${username}.xdg.config.files = {
     "fastfetch/config.jsonc" = {
       generator = lib.generators.toJSON {};
       value = {
         logo = {
-          type = "small";
-          source = "nixos";
+          type = "raw";
+          source = imgOut;
           padding = {
-            left = 2;
-            right = 4;
-            top = 0;
+            left = 0;
+            right = 10;
           };
-          color = {
-            "1" = "blue";
-            "2" = "light_blue";
-          };
+          width = 10;
+          height = 10;
         };
 
         modules = [
+          "break"
           {
             type = "command";
             key = " ";
@@ -62,4 +65,3 @@
     "fastfetch/quotes.sh".source = ./quotes.sh;
   };
 }
-

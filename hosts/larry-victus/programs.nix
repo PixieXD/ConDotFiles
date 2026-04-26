@@ -7,7 +7,7 @@
   hjem.users.${username} = {
     packages = with pkgs; [
       # applications
-      alacritty
+      alacritty-graphics
       floorp-bin
       flameshot
       vesktop
@@ -96,4 +96,3 @@
     java.enable = true;
   };
 }
-
