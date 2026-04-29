@@ -5,6 +5,7 @@
     parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    hyprland.url = "github:hyprwm/Hyprland";
 
     hjem = {
       url = "github:feel-co/hjem";
