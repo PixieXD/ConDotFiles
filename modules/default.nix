@@ -1,6 +1,7 @@
 {
   imports = [
     ./configs/fastfetch
+    ./configs/fuzzel.nix
     ./configs/hyprland
     ./configs/alacritty
     ./configs/wleave
@@ -12,4 +13,3 @@
     ./configs/ly.nix
   ];
 }
-

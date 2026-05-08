@@ -1,6 +1,6 @@
 {
   pkgs,
-  config,
+  inputs,
   username,
   ...
 }: {
@@ -10,26 +10,23 @@
       alacritty-graphics
       floorp-bin
       flameshot
-      vesktop
+      equibop
       vscodium
       nemo
       telegram-desktop
       overskride
-      networkmanager_dmenu
       krita
       libreoffice-fresh
       obsidian
 
       # system things
       waybar
-      rofi
+      fuzzel
       copyq
       wleave
       swayosd
       swaynotificationcenter
-      hyprcursor
       waypaper
-      hyprland-qt-support
       egl-wayland
       hyprpolkitagent
       awww
@@ -42,25 +39,27 @@
 
       # commands
       wget
-      # ffmpeg
+      ffmpeg
       fastfetchMinimal
       btop
       inotify-tools
       killall
       xbindkeys
-      # unzip
-      # win2xcur
-      # xcur2png
-      # imagemagick
-      # xcursorgen
+      unzip
+      win2xcur
+      xcur2png
+      imagemagick
+      xcursorgen
     ];
   };
 
   programs = {
     hyprland = {
       enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       withUWSM = false;
-      xwayland.enable = true;
+      xwayland.enable = false;
     };
 
     git = {
