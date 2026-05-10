@@ -11,9 +11,7 @@
         binds.cheatsheet.enable = true;
         telescope.enable = true;
         treesitter.context.enable = true;
-        comments.comment-nvim.enable = true;
         autocomplete.nvim-cmp.enable = true;
-        spellcheck.enable = true; # TODO : add MY languages
 
         presence.neocord.enable = true;
 
@@ -45,7 +43,7 @@
           json.enable = true;
           bash.enable = true;
           qml.enable = true;
-          # lua.enable = true; <-- this will be enabled when the time is right (hyprland lua config)
+          lua.enable = true; # <-- this will be enabled when the time is right (hyprland lua config) ----- nows the time
         };
 
         visuals = {

@@ -1,10 +1,5 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   services = {
-    # printing.enable = true;
     libinput.enable = true;
     udisks2.enable = true;
 
@@ -25,8 +20,7 @@
 
     displayManager.ly = {
       enable = true;
-      x11Support = true;
+      # x11Support = true;
     };
   };
 }
-

@@ -1,5 +1,7 @@
 {
   lib,
+  pkgs,
+  inputs,
   username,
   ...
 }: {
@@ -9,6 +11,13 @@
     "hypr/autostart.conf".source = ./autostart.conf;
     "hypr/env.conf".source = ./env.conf;
     "hypr/keybinds.conf".source = ./keybinds.conf;
+
+    "hypr/.luarc.json" = {
+      generator = lib.generators.toJSON {};
+      value = {
+        "workspace.library" = ["${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/share/hypr/stubs"];
+        "diagnostics.globals" = ["hl"];
+      };
+    };
   };
 }
-

@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   username,
   ...
 }: {
@@ -12,7 +11,6 @@
   nix.settings = {
     trusted-users = [username];
     experimental-features = ["nix-command" "flakes"];
-    auto-optimise-store = true;
   };
 
   boot.loader = {
@@ -68,4 +66,3 @@
     enableDefaultPackages = false;
   };
 }
-

@@ -11,10 +11,9 @@
       floorp-bin
       flameshot
       equibop
-      vscodium
-      nemo
+      thunar
       telegram-desktop
-      overskride
+      # overskride - i rarely use bluetooth anymore
       krita
       libreoffice-fresh
       obsidian
@@ -36,6 +35,8 @@
       kdePackages.qt6ct
       nwg-look
       quickshell
+      grim
+      slurp
 
       # commands
       wget
@@ -59,7 +60,6 @@
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
       portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
       withUWSM = false;
-      xwayland.enable = false;
     };
 
     git = {
@@ -93,5 +93,9 @@
     steam.enable = true;
     nvf.enable = true;
     java.enable = true;
+    gamescope = {
+      enable = true;
+      package = pkgs.gamescope.overrideAttrs {NIX_CFLAGS_COMPILE = ["-fno-fast-math"];};
+    };
   };
 }

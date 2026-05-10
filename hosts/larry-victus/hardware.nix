@@ -4,8 +4,8 @@
     nvidia = {
       open = true;
       modesetting.enable = true;
+      nvidiaSettings = false;
       package = config.boot.kernelPackages.nvidiaPackages.stable;
-      nvidiaSettings = true;
       prime = {
         sync.enable = true;
         intelBusId = "PCI:0:2:0";
@@ -15,7 +15,7 @@
 
     enableRedistributableFirmware = true;
     cpu.intel.updateMicrocode = true;
-    bluetooth.enable = true;
+    # bbluetooth.enable = true;
   };
 
   fileSystems = {
