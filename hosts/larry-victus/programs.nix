@@ -7,7 +7,7 @@
   hjem.users.${username} = {
     packages = with pkgs; [
       # applications
-      alacritty-graphics
+      foot
       floorp-bin
       flameshot
       equibop
@@ -21,7 +21,6 @@
       # system things
       waybar
       fuzzel
-      copyq
       wleave
       swayosd
       swaynotificationcenter
@@ -35,8 +34,7 @@
       kdePackages.qt6ct
       nwg-look
       quickshell
-      grim
-      slurp
+      inputs.stash.packages.${pkgs.stdenv.hostPlatform.system}.stash
 
       # commands
       wget
@@ -53,6 +51,8 @@
       xcursorgen
     ];
   };
+
+  systemd.packages = [inputs.stash.packages.${pkgs.stdenv.hostPlatform.system}.stash];
 
   programs = {
     hyprland = {
