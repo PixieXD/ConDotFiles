@@ -16,6 +16,10 @@
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    stash = {
+      url = "github:notashelf/stash";
+    };
   };
 
   outputs = inputs @ {parts, ...}:
