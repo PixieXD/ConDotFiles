@@ -42,6 +42,7 @@
       fastfetchMinimal
       btop
       inotify-tools
+      hyprcursor
       killall
       xbindkeys
       unzip

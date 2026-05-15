@@ -10,13 +10,13 @@
         position = "top";
         modules-left = [
           "custom/power"
-          "custom/rofi"
+          "custom/fuzzel"
           "hyprland/workspaces"
         ];
         modules-center = [
           "custom/flameshot"
           "clock"
-          "custom/copyq"
+          "custom/stash"
         ];
         modules-right = [
           "battery"
@@ -65,8 +65,8 @@
           format-icons = ["" "" ""];
         };
 
-        "custom/rofi" = {
-          on-click = "rofi -show drun";
+        "custom/fuzzel" = {
+          on-click = "fuzzel";
           format = "";
         };
 
@@ -75,8 +75,8 @@
           format = "";
         };
 
-        "custom/copyq" = {
-          on-click = "copyq toggle";
+        "custom/stash" = {
+          on-click = "stash list | fuzzel --dmenu | stash decode | wl-copy";
           format = "";
         };
 
@@ -119,7 +119,7 @@
         border-bottom: 4px solid @customviolet;
       }
 
-      #custom-copyq {
+      #custom-stash {
         background-color: @bgcolor;
         padding: 0px 15px 0px 15px;
         border-bottom: 4px solid @customviolet;
@@ -153,7 +153,7 @@
         border-bottom: 4px solid @customviolet;
       }
 
-      #custom-rofi {
+      #custom-fuzzel {
         background-color: @bgcolor;
         padding: 0px 15px 0px 15px;
         border-bottom: 4px solid @customviolet;
@@ -196,4 +196,3 @@
     '';
   };
 }
-
