@@ -1,68 +1,87 @@
 {
-  pkgs,
-  username,
-  ...
-}: {
-  time.timeZone = "Asia/Kuala_Lumpur";
-  i18n.defaultLocale = "en_US.UTF-8";
-  networking.networkmanager.enable = true;
-  nixpkgs.config.allowUnfree = true;
+  cf = {
+    programs = {
+      fastfetch = {
+        enable = true;
+        mafuyu = true;
+      };
 
-  nix.settings = {
-    trusted-users = [username];
-    experimental-features = ["nix-command" "flakes"];
-  };
+      nh = {
+        enable = true;
+        flake = "/home/larry/Important/ConDotFiles";
+      };
 
-  boot.loader = {
-    limine = {
-      enable = true;
-      maxGenerations = 5;
+      flameshot = {
+        enable = true;
+        saveDir = "home/larry/Pictures/Screenshots";
+      };
 
-      extraEntries = ''
-        /Windows 11
-          protocol: efi
-          path: uuid(bfd3a7a4-d120-437b-899b-0549f3d725c0):/EFI/Microsoft/Boot/bootmgfw.efi
-      '';
-    };
+      zsh = {
+        enable = true;
+        ohmyzsh = true;
+      };
 
-    efi.canTouchEfiVariables = true;
-  };
-
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true; # see 160923 or 330916 on nixpkgs' issue tracker for more info
-    extraPortals = with pkgs; [
-      kdePackages.xdg-desktop-portal-kde
-      xdg-desktop-portal-gtk
-    ];
-    config = {
-      common.default = ["gtk"];
-      gtk.default = ["gtk"];
+      foot = {
+        enable = true;
+        theme = "dark";
+      };
 
       hyprland = {
-        default = ["hyprland" "gtk"];
-        "org.freedesktop.impl.portal.FileChooser" = ["kde"];
+        enable = true;
+        hyprgit = true;
       };
+
+      steam = {
+        enable = true;
+        enableProton = true;
+        enableGamemode = true;
+      };
+
+      git = {
+        enable = true;
+        name = "PixieXD";
+        email = "tikt9440@tutamail.com";
+      };
+
+      fuzzel.enable = true;
+      waybar.enable = true;
+      xdg.enable = true;
+      nvf.enable = true;
+      waypaper.enable = true;
+      wleave.enable = true;
     };
-  };
 
-  fonts = {
-    packages = with pkgs; [
-      noto-fonts
-      noto-fonts-cjk-sans
-      noto-fonts-color-emoji
-
-      nerd-fonts.jetbrains-mono
-    ];
-
-    fontconfig.defaultFonts = {
-      serif = ["Noto Serif" "Noto Color Emoji"];
-      sansSerif = ["Noto Sans" "Noto Color Emoji"];
-      monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
-      emoji = ["Noto Color Emoji"];
+    # Services
+    services = {
+      openssh.enable = true;
+      pipewire.enable = true;
+      stash.enable = true;
+      usb.enable = true;
     };
 
-    fontconfig.enable = true;
-    enableDefaultPackages = false;
+    # System / Core
+    sys = {
+      limine = {
+        enable = true;
+        generations = 5;
+        entries = ''
+          /Windows 11
+            protocol: efi
+            path: uuid(bfd3a7a4-d120-437b-899b-0549f3d725c0):/EFI/Microsoft/Boot/bootmgfw.efi
+        '';
+      };
+
+      nvidia = {
+        enable = true;
+        prime = true;
+        cpuPrime = "PCI:0:2:0";
+        gpuPrime = "PCI:1:0:0";
+      };
+
+      bluetooth.enable = false;
+      network.enable = true;
+      fonts.enable = true;
+      ly.enable = true;
+    };
   };
 }

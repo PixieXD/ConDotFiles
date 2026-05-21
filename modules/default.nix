@@ -1,15 +1,9 @@
-{
-  imports = [
-    ./configs/fastfetch
-    ./configs/fuzzel.nix
-    ./configs/hyprland
-    ./configs/wleave
-    ./configs/zsh.nix
-    ./configs/nvim.nix
-    ./configs/flameshot.nix
-    ./configs/waybar.nix
-    ./configs/limine.nix
-    ./configs/foot.nix
-    ./configs/ly.nix
-  ];
+{lib, ...}: let
+  dirs = [./sys ./services ./programs];
+  files =
+    lib.filter
+    (file: lib.hasSuffix ".nix" (toString file))
+    (lib.flatten (map lib.filesystem.listFilesRecursive dirs));
+in {
+  imports = [./nixos.nix] ++ files;
 }
