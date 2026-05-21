@@ -6,4 +6,4 @@ Inside you'll see just only one host machine, that being:-
 
 More to come!
 
-![Jimmy in a tracksuit](./images/jimmy.webp)
+![Jimmy in a tracksuit](../images/jimmy.webp)
