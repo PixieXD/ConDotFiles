@@ -15,52 +15,52 @@ in {
     hjem.users.${username} = {
       packages = with pkgs; [fnott libnotify];
 
-      xdg.config.files = {
-        "fnott/fnott.ini" = {
-          generator = lib.generators.toINI {};
-          value = {
-            min-width = 0;
-            max-width = 0;
-            max-height = 0;
-            stacking-order = "bottom-up";
-            anchor = "top-right";
-            edge-margin-vertical = 15;
-            edge-margin-horizontal = 15;
+      xdg.config.files."fnott/fnott.ini".text = ''
+        # Global values
+        min-width=0
+        max-width=0
+        max-height=0
+        stacking-order=bottom-up
+        anchor=top-right
+        edge-margin-vertical=15
+        edge-margin-horizontal=15
 
-            border-size = 2;
+        border-size=2
 
-            padding-vertical = 15;
-            padding-horizontal = 15;
+        padding-vertical=15
+        padding-horizontal=15
 
-            dpi-aware = true;
+        dpi-aware=yes
 
-            title-font = "JetBrainsMono Nerd Font Mono";
-            title-format = "<i>%a%A</i>";
+        title-font=JetBrainsMono Nerd Font Mono
+        title-format=<i>%a%A</i>
 
-            summary-font = "JetBrainsMono Nerd Font Mono";
-            summary-format = "<b>%s</b>\n";
+        summary-font=JetBrainsMono Nerd Font Mono
+        summary-format=<b>%s</b>\n
 
-            body-font = "JetBrainsMono Nerd Font Mono";
-            body-format = "%b";
+        body-font=JetBrainsMono Nerd Font Mono
+        body-format=%b
 
-            progress-bar-height = 20;
-            progress-style = "bar";
+        progress-bar-height=20
+        progress-style=bar
 
-            max-timeout = 5;
-            default-timeout = 5;
-            idle-timeout = 5;
+        # icon=
 
-            title-color = "a6adc8ff";
-            summary-color = "cdd6f4ff";
-            body-color = "cdd6f4ff";
-            background = "1e1e2eff";
-            border-color = "89b4faff";
-            progress-bar-color = "6c7086ff";
+        max-timeout=5
+        default-timeout=5
+        idle-timeout=5
 
-            critical.border-color = "fab387ff";
-          };
-        };
-      };
+        title-color=a6adc8ff
+        summary-color=cdd6f4ff
+        body-color=cdd6f4ff
+        background=1e1e2eff
+        border-color=89b4faff
+        progress-bar-color=6c7086ff
+
+        [critical]
+        border-color=fab387ff
+
+      '';
     };
   };
 }

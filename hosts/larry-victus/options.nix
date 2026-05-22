@@ -13,7 +13,7 @@
 
       flameshot = {
         enable = true;
-        saveDir = "home/larry/Pictures/Screenshots";
+        saveDir = "/home/larry/Pictures/Screenshots";
       };
 
       zsh = {
@@ -57,6 +57,7 @@
       pipewire.enable = true;
       stash.enable = true;
       usb.enable = true;
+      fnott.enable = true;
     };
 
     # System / Core

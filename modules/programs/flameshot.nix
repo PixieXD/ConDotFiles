@@ -18,7 +18,7 @@ in {
 
   config = lib.mkIf cf.enable {
     hjem.users.${username} = {
-      packages = [pkgs.flameshot];
+      packages = with pkgs; [flameshot grim];
 
       xdg.config.files = {
         "flameshot/flameshot.ini" = {

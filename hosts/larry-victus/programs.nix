@@ -16,7 +16,6 @@
 
       # system things
       swayosd
-      swaynotificationcenter
       egl-wayland
       hyprpolkitagent
       nwg-look
