@@ -43,6 +43,11 @@
         email = "tikt9440@tutamail.com";
       };
 
+      prismLauncher = {
+        enable = true;
+        cracked = true;
+      };
+
       fuzzel.enable = true;
       waybar.enable = true;
       xdg.enable = true;

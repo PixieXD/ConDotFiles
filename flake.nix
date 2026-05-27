@@ -6,6 +6,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     hyprland.url = "github:hyprwm/Hyprland";
+    prismlauncher.url = "github:PrismLauncher/PrismLauncher/9.4";
 
     hjem = {
       url = "github:feel-co/hjem";
