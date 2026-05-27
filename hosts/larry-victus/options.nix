@@ -49,6 +49,7 @@
       nvf.enable = true;
       waypaper.enable = true;
       wleave.enable = true;
+      thunar.enable = true;
     };
 
     # Services
@@ -75,10 +76,11 @@
       nvidia = {
         enable = true;
         prime = true;
-        cpuPrime = "PCI:0:2:0";
-        gpuPrime = "PCI:1:0:0";
+        cpuPrime = "PCI:0@0:2:0";
+        gpuPrime = "PCI:1@0:0:0";
       };
 
+      kernel.type = "latest";
       bluetooth.enable = false;
       network.enable = true;
       fonts.enable = true;

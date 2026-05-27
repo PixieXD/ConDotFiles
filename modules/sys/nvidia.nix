@@ -31,6 +31,14 @@ in {
   config = lib.mkIf cf.enable {
     services.xserver.videoDrivers = ["nvidia"];
 
+    boot.initrd.kernelModules = [
+      "i915"
+      "nvidia"
+      "nvidia_modeset"
+      "nvidia_uvm"
+      "nvidia_drm"
+    ];
+
     hardware = {
       graphics = {
         enable = true;
@@ -41,8 +49,11 @@ in {
         open = true; # i had no plans to use closed ones anyway
         gsp.enable = true;
         modesetting.enable = true;
+        powerManagement.enable = true;
+        branch = "latest";
         nvidiaSettings = false;
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+        # package = config.boot.kernelPackages.nvidiaPackages.stable;
 
         prime = lib.mkIf cf.prime {
           sync.enable = true;

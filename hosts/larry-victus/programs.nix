@@ -8,7 +8,6 @@
       # applications
       floorp-bin
       equibop
-      thunar
       telegram-desktop
       krita
       libreoffice-fresh
@@ -19,6 +18,9 @@
       egl-wayland
       hyprpolkitagent
       nwg-look
+      kdePackages.qt6ct
+      catppuccin-qt5ct
+      catppuccin-gtk
       quickshell
 
       # commands

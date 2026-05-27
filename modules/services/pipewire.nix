@@ -11,7 +11,6 @@ in {
   };
 
   config = lib.mkIf cf.enable {
-    # check back this later, on the nixos wiki ofc...
     # also idt a gui pipewire is really needed, ill think abt it :p
     security.rtkit.enable = true;
 
@@ -21,6 +20,16 @@ in {
       alsa = {
         enable = true;
         support32Bit = true;
+      };
+
+      extraConfig.pipewire."92-low-latency" = {
+        # check wiki
+        "context.properties" = {
+          "default.clock.rate" = 48000;
+          "default.clock.quantum" = 32; # todo!! check audio, keep increasing until it no cracking sound / sounds good!!
+          "default.clock.min-quantum" = 32;
+          "default.clock.max-quantum" = 32;
+        };
       };
     };
 

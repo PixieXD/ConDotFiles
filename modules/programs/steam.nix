@@ -23,6 +23,10 @@ in {
   config = lib.mkIf cf.enable {
     programs.steam = {
       enable = true;
+      extest.enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+
       extraCompatPackages = lib.mkIf cf.enableProton [pkgs.proton-ge-bin];
     };
 
