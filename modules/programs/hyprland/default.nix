@@ -34,20 +34,18 @@ in {
       packages = []; # none as of now lmao
 
       xdg.config.files = {
-        "hypr/hyprland.conf".source = ./hyprland.conf;
-        "hypr/animations.conf".source = ./animations.conf;
-        "hypr/autostart.conf".source = ./autostart.conf;
-        "hypr/env.conf".source = ./env.conf;
-        "hypr/keybinds.conf".source = ./keybinds.conf;
+        "hypr/hyprland.lua".source = ./hyprland.lua;
+        "hypr/animations.lua".source = ./animations.lua;
+        "hypr/autostart.lua".source = ./autostart.lua;
+        "hypr/environment.lua".source = ./environment.lua;
+        "hypr/keybinds.lua".source = ./keybinds.lua;
+      };
 
-        # lua, i dont know what to do with lua rn tho...
-        #"hypr/.luarc.json" = {
-        #  generator = lib.generators.toJSON {};
-        #  value = {
-        #    "workspace.library" = ["${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/share/hypr/stubs"];
-        #    "diagnostics.globals" = ["hl"];
-        #  };
-        #};
+      "hypr/.luarc.json" = {
+        generator = lib.generators.toJSON {};
+        value = {
+          "workspace.library" = ["${pack.hyprland}/share/hypr/stubs"];
+        };
       };
     };
   };
