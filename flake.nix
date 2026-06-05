@@ -13,13 +13,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # For configuring hyprland in the future, stay tuned :3 || don't forget to put it on the modules
-    #hjem-impure = {
-    #  url = "github:Rexcrazy804/hjem-impure";
-    #  inputs.nixpkgs.follows = "";
-    #  inputs.hjem.follows = "";
-    #};
-
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
