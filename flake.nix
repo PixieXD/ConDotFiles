@@ -2,7 +2,6 @@
   description = "Larry's own personal NixOS System";
 
   inputs = {
-    parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     hyprland.url = "github:hyprwm/Hyprland";
@@ -23,9 +22,30 @@
     };
   };
 
-  outputs = inputs @ {parts, ...}:
-    parts.lib.mkFlake {inherit inputs;} {
-      imports = [./hosts];
-      systems = ["x86_64-linux"];
+  outputs = inputs: {
+    # HAWWO, idk what to do with this, but ill check some other configs out and figure how to do things!!!
+
+    nixosConfigurations = {
+      larry-victus = let
+        username = "larry";
+        hostname = "larry-victus";
+        specialArgs = {inherit username hostname inputs;};
+      in
+        inputs.nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          inherit specialArgs;
+          modules = [
+            inputs.hjem.nixosModules.default
+            ./hosts/larry-victus
+            ./modules
+
+            (
+              {pkgs, ...}: {
+                nixpkgs.overlays = [inputs.cachyos-kernel.overlays.pinned];
+              }
+            )
+          ];
+        };
     };
+  };
 }

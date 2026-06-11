@@ -1,9 +1,0 @@
-{
-    "editor.defaultFormatter": null,
-    "files.defaultLanguage": ".nix",
-    "editor.formatOnSave": false,
-    "files.autoSave": "onFocusChange",
-    "workbench.colorTheme": "Catppuccin Mocha",
-    "editor.tabSize": 4,
-    "editor.indentSize": "tabSize"
-}
