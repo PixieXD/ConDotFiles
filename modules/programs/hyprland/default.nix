@@ -39,12 +39,12 @@ in {
         "hypr/autostart.lua".source = ./autostart.lua;
         "hypr/environment.lua".source = ./environment.lua;
         "hypr/keybinds.lua".source = ./keybinds.lua;
-      };
 
-      "hypr/.luarc.json" = {
-        generator = lib.generators.toJSON {};
-        value = {
-          "workspace.library" = ["${pack.hyprland}/share/hypr/stubs"];
+        "hypr/.luarc.json" = {
+          generator = lib.generators.toJSON {};
+          value = {
+            "workspace.library" = ["${pack.hyprland}/share/hypr/stubs"];
+          };
         };
       };
     };

@@ -20,7 +20,7 @@ in {
           generator = lib.generators.toINI {};
           value = {
             Settings = {
-              folder = "~/Picutes/Wallpaper"; # Adjust accordingly
+              folder = "~/Picures/Wallpaper"; # Adjust accordingly
               backend = "awww";
               monitors = "All";
               fill = "Fill";

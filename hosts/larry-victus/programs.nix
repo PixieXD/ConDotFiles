@@ -12,6 +12,7 @@
       krita
       libreoffice-fresh
       obsidian
+      localsend
 
       # system things
       swayosd

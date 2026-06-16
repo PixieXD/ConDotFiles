@@ -15,7 +15,9 @@ in {
       packages = with pkgs; [
         noto-fonts
         noto-fonts-cjk-sans
+        noto-fonts-color-emoji
         nerd-fonts.jetbrains-mono
+        nerd-fonts.symbols-only
       ];
 
       fontconfig.defaultFonts = {
@@ -25,7 +27,7 @@ in {
         emoji = ["Noto Color Emoji"];
       };
 
-      # enableDefaultPackages = true; test option. check back later :p
+      enableDefaultPackages = false;
       fontconfig.enable = true;
     };
   };

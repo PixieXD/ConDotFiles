@@ -28,7 +28,7 @@
 
       hyprland = {
         enable = true;
-        hyprgit = true;
+        hyprgit = false;
       };
 
       steam = {

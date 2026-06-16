@@ -30,6 +30,7 @@ in {
               savePath = cf.saveDir;
               undoLimit = 100;
               contrastOpacity = 188;
+              useGrimAdapter = true;
             };
           };
         };

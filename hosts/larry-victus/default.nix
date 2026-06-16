@@ -7,14 +7,11 @@
     ./programs.nix
     ./options.nix
     ./hardware-configuration.nix
-
-    ../../modules
   ];
 
   users.users.${username} = {
     isNormalUser = true;
     extraGroups = ["wheel" "input"];
-    shell = pkgs.zsh;
   };
 
   time.timeZone = "Asia/Kuala_Lumpur";
@@ -24,7 +21,6 @@
     users.${username} = {
       directory = "/home/larry";
     };
-    clobberByDefault = true;
     linker = pkgs.smfh;
   };
 

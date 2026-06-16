@@ -1,6 +1,8 @@
 {
   lib,
   config,
+  pkgs,
+  username,
   ...
 }: let
   cf = config.cf.programs.zsh;
@@ -26,6 +28,10 @@ in {
         theme = "robbyrussell";
         plugins = ["git"];
       };
+    };
+
+    users.users.${username} = {
+      shell = pkgs.zsh;
     };
   };
 }

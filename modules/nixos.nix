@@ -3,7 +3,7 @@
   config = {
     nix = {
       enable = true; # its funny.
-      package = pkgs.lixPackageSets.latest.lix;
+      # package = pkgs.lixPackageSets.latest.lix;
       channel.enable = false;
 
       settings = {

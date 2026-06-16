@@ -23,7 +23,7 @@ in {
 
   config = lib.mkIf cf.enable {
     hjem.users.${username} = {
-      packages = [pkgs.fastfetchMinimal];
+      packages = [pkgs.fastfetch.minimal];
 
       xdg.config.files = {
         "fastfetch/config.jsonc" = {
