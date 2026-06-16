@@ -1,0 +1,55 @@
+* {
+  border: none;
+  border-radius: 3px;
+
+  font-family:
+    NotoSansDisplay,
+    Symbols Nerd Font Mono;
+  font-size: 13px;
+}
+
+window#waybar {
+  background-color: rgba(17, 17, 33, 0);
+  border-radius: 0;
+}
+
+#battery,
+#network,
+#wireplumber,
+#clock {
+  border: 2px solid #2e2e48;
+  background-color: #1e1e2e;
+  margin: 4pt;
+  padding: 0pt 4pt;
+}
+
+#workspaces {
+  border: 2px solid #2e2e48;
+  background-color: #1e1e2e;
+  margin: 4pt 0;
+}
+
+#workspaces button {
+  border-radius: 0;
+}
+
+#custom-fuzzel {
+  border: 2px solid #2e2e48;
+  background-color: #1e1e2e;
+  margin: 4pt;
+  font-size: 20pt;
+  font-weight: lighter;
+  padding: 0 8pt;
+}
+
+#window {
+  border: 2px solid #2e2e48;
+  background-color: #1e1e2e;
+  margin: 4pt;
+  padding: 0 4pt;
+}
+
+window#waybar.empty #window {
+  border: none;
+  background-color: transparent;
+}

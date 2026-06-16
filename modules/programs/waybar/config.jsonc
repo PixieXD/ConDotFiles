@@ -1,0 +1,102 @@
+[
+  {
+    "position": "top",
+    "modules-left": [
+      "custom/fuzzel",
+      "hyprland/workspaces",
+      "hyprland/window"
+    ],
+    "modules-center": [], // ???
+    "modules-right": [
+      "battery",
+      "network",
+      "bluetooth",
+      "wireplumber",
+      "clock"
+    ],
+    "custom/fuzzel": {
+      "on-click": "fuzzel",
+      "format": ""
+    },
+    "hyprland/window": {
+      "format": " {title}"
+    },
+    "battery": {
+      "format": "{capacity}% {icon}",
+      "format-icons": {
+        "default": [
+          "󰂎",
+          "󰁺",
+          "󰁻",
+          "󰁼",
+          "󰁽",
+          "󰁾",
+          "󰁿",
+          "󰂀",
+          "󰂁",
+          "󰂂",
+          "󰁹"
+        ],
+        "charging": [
+          "󰢟",
+          "󰢜",
+          "󰂆",
+          "󰂇",
+          "󰂈",
+          "󰢝",
+          "󰂉",
+          "󰢞",
+          "󰂊",
+          "󰂋",
+          "󰂅"
+        ]
+      },
+      "states": {
+        "reminder": 50,
+        "warning": 30,
+        "critical": 10
+      },
+      "interval": 50
+    },
+    "network": {
+      "format": "{ifname}",
+      "format-wifi": "{essid} ({signalStrength}%)  {icon}",
+      "format-ethernet": "{ipaddr}/{cidr}  {icon}",
+      "format-disconnected": "No network, huh???",
+      "format-disabled": "",
+      "tooltip-format": "{ifname} on {gwaddr}",
+      "tooltip-format-wifi": "\"{essid}\" @ {frequency} GHz ({signalStrength}%)\nUp: {bandwidthUpBytes}\nDown: {bandwidthDownBytes}\nTotal: {bandwidthTotalBytes}",
+      "tooltip-format-ethernet": "Ethernet via {ifname} ({ipaddr})",
+      "tooltip-format-disconnected": "Check your wifi / ethernet cable out...",
+      "format-icons": {
+        "wifi": [
+          "󰤟",
+          "󰤢",
+          "󰤥",
+          "󰤨"
+        ],
+        "ethernet": "󰈀"
+      },
+      "interval": 30
+    },
+    "bluetooth": { // todo, do it later when i enabled bluetooth on tjis
+      "format": "󰂯",
+      "format-connected": "{device_alias} 󰂯}",
+      "format-connected-battery": "{device_alias} ({device_battery_percentage})󰥈",
+      "format-disabled": "",
+      "format-no-controller": ""
+    },
+    "wireplumber": {
+      "format": "{volume}% {icon}",
+      "format-muted": "Muted",
+      "format-icons": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "clock": {
+      "format": "{:%e %B %Y %A, %I:%M %p}"
+    }
+  }
+]
